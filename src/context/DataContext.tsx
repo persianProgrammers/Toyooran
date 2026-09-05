@@ -164,14 +164,16 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [hasAdminPassword] = useState(true);
 
   const [adminDataReady, setAdminDataReady] = useState(false);
+  const [csrfToken, setCsrfToken] = useState('');
+  const refreshCsrf = async () => { const response = await fetch('/api/auth/csrf', { credentials: 'include' }); const result = await response.json(); setCsrfToken(result.token || ''); return result.token || ''; };
   useEffect(() => {
     fetch('/api/auth/me', { credentials: 'include' })
       .then(response => response.ok ? response.json() : null)
-      .then(result => { if (result?.admin) setAdminUser({ username: result.admin.username, displayName: 'مدیریت کل سیستم', role: 'superadmin' }); })
+      .then(async result => { if (result?.admin) { await refreshCsrf(); setAdminUser({ username: result.admin.username, displayName: 'مدیریت کل سیستم', role: 'superadmin' }); } })
       .catch(() => undefined);
   }, []);
   const saveAdminState = (key: string, value: unknown) => {
-    if (adminUser && adminDataReady) void fetch(`/api/admin/state/${key}`, { method: 'PUT', credentials: 'include', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ value }) });
+    if (adminUser && adminDataReady && csrfToken) void fetch(`/api/admin/state/${key}`, { method: 'PUT', credentials: 'include', headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': csrfToken }, body: JSON.stringify({ value }) });
   };
   useEffect(() => {
     if (!adminUser) { setAdminDataReady(false); return; }
@@ -350,6 +352,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const result = await response.json();
     if (response.ok) {
       if (result.mfaRequired) return { success: false, mfaRequired: true };
+      await refreshCsrf();
       setAdminUser({ username, displayName: username === 'admin' ? 'مدیریت کل سیستم' : 'مدیر مهندسی و فروش', role: 'superadmin' });
       return { success: true };
     }
@@ -357,13 +360,14 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const verifyMfa = async (token: string) => {
-    const response = await fetch('/api/auth/mfa/verify', { method: 'POST', credentials: 'include', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token }) });
+    const tokenValue = csrfToken || await refreshCsrf();
+    const response = await fetch('/api/auth/mfa/verify', { method: 'POST', credentials: 'include', headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': tokenValue }, body: JSON.stringify({ token }) });
     const result = await response.json();
     if (response.ok) { setAdminUser({ username: 'admin', displayName: 'مدیریت کل سیستم', role: 'superadmin' }); return { success: true }; }
     return { success: false, error: result.error || 'کد MFA نامعتبر است.' };
   };
 
-  const logout = () => { void fetch('/api/auth/logout', { method: 'POST', credentials: 'include' }); setAdminUser(null); };
+  const logout = () => { void fetch('/api/auth/logout', { method: 'POST', credentials: 'include', headers: { 'X-CSRF-Token': csrfToken } }); setAdminUser(null); };
 
   const changePassword = async (_oldPassword: string, _newPassword: string) => {
     return { success: false, error: 'تغییر رمز فقط از طریق endpoint امن backend انجام می‌شود.' };

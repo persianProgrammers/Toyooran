@@ -5,7 +5,8 @@ import dotenv from "dotenv";
 import fs from "fs";
 import { ARTICLES, PRODUCTS } from "./src/data/mockData";
 import cookieParser from "cookie-parser";
-import { confirmMfa, getAdminState, loginAdmin, logoutAdmin, requireAdmin, requireMfaPending, setAdminState, startMfaSetup, verifyMfaSession } from "./server/auth";
+import { audit, changePassword, confirmMfa, createCsrfToken, getAdminState, loginAdmin, logoutAdmin, requireAdmin, requireMfaPending, requireRole, setAdminState, startMfaSetup, verifyCsrf, verifyMfaSession } from "./server/auth";
+import { z } from 'zod';
 
 dotenv.config();
 
@@ -159,13 +160,19 @@ async function startServer() {
     res.setHeader('X-Frame-Options', 'DENY');
     res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
     res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+    res.setHeader('Content-Security-Policy', "default-src 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com");
     if (process.env.NODE_ENV === 'production') res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
     next();
   });
   app.use(express.json({ limit: '100kb' }));
   app.use(cookieParser());
+  app.use('/api', (req, res, next) => {
+    if (['POST', 'PUT', 'PATCH', 'DELETE'].includes(req.method) && !req.path.startsWith('/auth/login') && !verifyCsrf(req)) return res.status(403).json({ error: 'CSRF token نامعتبر است.' });
+    next();
+  });
 
   const apiHits = new Map<string, { count: number; resetAt: number }>();
+  const loginHits = new Map<string, { count: number; resetAt: number }>();
   app.use('/api', (req, res, next) => {
     const now = Date.now();
     const key = req.ip || 'unknown';
@@ -177,10 +184,19 @@ async function startServer() {
   });
 
   app.post('/api/auth/login', async (req, res) => {
-    const { username, password, turnstileToken } = req.body || {};
-    if (typeof username !== 'string' || typeof password !== 'string') return res.status(400).json({ success: false, error: 'اطلاعات ورود ناقص است.' });
+    const key = req.ip || 'unknown'; const now = Date.now(); const hit = loginHits.get(key) || { count: 0, resetAt: now + 15 * 60_000 }; if (hit.resetAt <= now) { hit.count = 0; hit.resetAt = now + 15 * 60_000; } hit.count += 1; loginHits.set(key, hit); if (hit.count > 5) return res.status(429).json({ success: false, error: 'تلاش‌های ورود زیاد است.' });
+    const parsed = z.object({ username: z.string().trim().min(1).max(80), password: z.string().min(1).max(256), turnstileToken: z.string().optional() }).safeParse(req.body);
+    if (!parsed.success) return res.status(400).json({ success: false, error: 'اطلاعات ورود نامعتبر است.' });
+    const { username, password, turnstileToken } = parsed.data;
     const result = await loginAdmin(username, password, turnstileToken, req.ip, res);
+    if (result.success) loginHits.delete(key);
     res.status(result.success ? 200 : 401).json(result);
+  });
+  app.get('/api/auth/csrf', (req, res) => res.json({ token: createCsrfToken(res) }));
+  app.post('/api/auth/password', requireAdmin, requireRole('superadmin'), (req, res) => {
+    const parsed = z.object({ oldPassword: z.string().min(1).max(256), newPassword: z.string().min(16).max(256) }).safeParse(req.body);
+    if (!parsed.success || !changePassword(req as any, parsed.data.oldPassword, parsed.data.newPassword)) return res.status(400).json({ success: false, error: 'تغییر رمز ناموفق بود.' });
+    audit(req as any, 'password_changed'); res.status(204).end();
   });
   app.post('/api/auth/logout', requireAdmin, (req, res) => { logoutAdmin(req, res); res.status(204).end(); });
   app.get('/api/auth/me', requireAdmin, (req, res) => res.json({ authenticated: true, admin: (req as any).admin }));
@@ -193,12 +209,14 @@ async function startServer() {
     const ok = await confirmMfa((req as any).admin.id, String(req.body?.token || ''));
     res.status(ok ? 200 : 400).json({ success: ok, error: ok ? undefined : 'کد MFA نامعتبر است.' });
   });
-  app.get('/api/admin/state/:key', requireAdmin, (req, res) => {
+  app.get('/api/admin/state/:key', requireAdmin, requireRole('superadmin', 'content_manager', 'sales_manager', 'media_manager', 'viewer'), (req, res) => {
     const value = getAdminState(req.params.key);
     res.json({ value });
   });
-  app.put('/api/admin/state/:key', requireAdmin, (req, res) => {
-    setAdminState(req.params.key, req.body?.value);
+  app.put('/api/admin/state/:key', requireAdmin, requireRole('superadmin', 'content_manager', 'sales_manager', 'media_manager'), (req, res) => {
+    if (!['products', 'projects', 'services', 'articles', 'categories', 'companyInfo', 'heroCms', 'aiConfig', 'quotes', 'consultations', 'customers', 'media'].includes(req.params.key)) return res.status(400).json({ error: 'کلید state نامعتبر است.' });
+    if (JSON.stringify(req.body?.value ?? null).length > 2_000_000) return res.status(413).json({ error: 'داده بیش از حد بزرگ است.' });
+    setAdminState(req as any, req.params.key, req.body?.value);
     res.status(204).end();
   });
 

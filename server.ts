@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import fs from "fs";
 import { ARTICLES, PRODUCTS } from "./src/data/mockData";
 import cookieParser from "cookie-parser";
-import { audit, changePassword, confirmMfa, createCsrfToken, getAdminState, loginAdmin, logoutAdmin, requireAdmin, requireMfaPending, requireRole, setAdminState, startMfaSetup, verifyCsrf, verifyMfaSession } from "./server/auth";
+import { audit, changePassword, confirmMfa, consumeRateLimit, createCsrfToken, getAdminState, listSessions, loginAdmin, logoutAdmin, requireAdmin, requireMfaPending, requireRole, resetRateLimit, revokeAllSessions, setAdminState, startMfaSetup, verifyCsrf, verifyMfaSession } from "./server/auth";
 import { z } from 'zod';
 
 dotenv.config();
@@ -172,7 +172,6 @@ async function startServer() {
   });
 
   const apiHits = new Map<string, { count: number; resetAt: number }>();
-  const loginHits = new Map<string, { count: number; resetAt: number }>();
   app.use('/api', (req, res, next) => {
     const now = Date.now();
     const key = req.ip || 'unknown';
@@ -184,12 +183,12 @@ async function startServer() {
   });
 
   app.post('/api/auth/login', async (req, res) => {
-    const key = req.ip || 'unknown'; const now = Date.now(); const hit = loginHits.get(key) || { count: 0, resetAt: now + 15 * 60_000 }; if (hit.resetAt <= now) { hit.count = 0; hit.resetAt = now + 15 * 60_000; } hit.count += 1; loginHits.set(key, hit); if (hit.count > 5) return res.status(429).json({ success: false, error: 'تلاش‌های ورود زیاد است.' });
+    const key = `login:${req.ip || 'unknown'}`; const rate = consumeRateLimit(key, 5, 15 * 60_000); if (!rate.allowed) return res.status(429).json({ success: false, error: 'تلاش‌های ورود زیاد است.' });
     const parsed = z.object({ username: z.string().trim().min(1).max(80), password: z.string().min(1).max(256), turnstileToken: z.string().optional() }).safeParse(req.body);
     if (!parsed.success) return res.status(400).json({ success: false, error: 'اطلاعات ورود نامعتبر است.' });
     const { username, password, turnstileToken } = parsed.data;
     const result = await loginAdmin(username, password, turnstileToken, req.ip, res);
-    if (result.success) loginHits.delete(key);
+    if (result.success) resetRateLimit(key);
     res.status(result.success ? 200 : 401).json(result);
   });
   app.get('/api/auth/csrf', (req, res) => res.json({ token: createCsrfToken(res) }));
@@ -198,6 +197,8 @@ async function startServer() {
     if (!parsed.success || !changePassword(req as any, parsed.data.oldPassword, parsed.data.newPassword)) return res.status(400).json({ success: false, error: 'تغییر رمز ناموفق بود.' });
     audit(req as any, 'password_changed'); res.status(204).end();
   });
+  app.get('/api/auth/sessions', requireAdmin, (req, res) => res.json({ sessions: listSessions(req as any) }));
+  app.delete('/api/auth/sessions', requireAdmin, (req, res) => { revokeAllSessions(req as any); res.status(204).end(); });
   app.post('/api/auth/logout', requireAdmin, (req, res) => { logoutAdmin(req, res); res.status(204).end(); });
   app.get('/api/auth/me', requireAdmin, (req, res) => res.json({ authenticated: true, admin: (req as any).admin }));
   app.post('/api/auth/mfa/verify', requireMfaPending, async (req, res) => {
@@ -210,13 +211,15 @@ async function startServer() {
     res.status(ok ? 200 : 400).json({ success: ok, error: ok ? undefined : 'کد MFA نامعتبر است.' });
   });
   app.get('/api/admin/state/:key', requireAdmin, requireRole('superadmin', 'content_manager', 'sales_manager', 'media_manager', 'viewer'), (req, res) => {
-    const value = getAdminState(req.params.key);
+    const key = String(req.params.key);
+    const value = getAdminState(key);
     res.json({ value });
   });
   app.put('/api/admin/state/:key', requireAdmin, requireRole('superadmin', 'content_manager', 'sales_manager', 'media_manager'), (req, res) => {
-    if (!['products', 'projects', 'services', 'articles', 'categories', 'companyInfo', 'heroCms', 'aiConfig', 'quotes', 'consultations', 'customers', 'media'].includes(req.params.key)) return res.status(400).json({ error: 'کلید state نامعتبر است.' });
+    const key = String(req.params.key);
+    if (!['products', 'projects', 'services', 'articles', 'categories', 'companyInfo', 'heroCms', 'aiConfig', 'quotes', 'consultations', 'customers', 'media'].includes(key)) return res.status(400).json({ error: 'کلید state نامعتبر است.' });
     if (JSON.stringify(req.body?.value ?? null).length > 2_000_000) return res.status(413).json({ error: 'داده بیش از حد بزرگ است.' });
-    setAdminState(req as any, req.params.key, req.body?.value);
+    setAdminState(req as any, key, req.body?.value);
     res.status(204).end();
   });
 
@@ -372,7 +375,7 @@ Sitemap: ${baseUrl}/sitemap.xml`);
     app.use(vite.middlewares);
     
     // Serve index.html for all other routes
-    app.use('*', async (req, res, next) => {
+    app.use(/.*/, async (req, res, next) => {
       try {
         const url = req.originalUrl;
         const baseUrl = process.env.APP_URL || `https://${req.get('host')}`;
@@ -401,7 +404,7 @@ Sitemap: ${baseUrl}/sitemap.xml`);
     const distPath = path.join(process.cwd(), 'dist');
     app.use(express.static(distPath, { index: false })); // Disable automatic index.html serving
     
-    app.get('*', (req, res) => {
+    app.get(/.*/, (req, res) => {
       const url = req.originalUrl;
       const baseUrl = process.env.APP_URL || `https://${req.get('host')}`;
       

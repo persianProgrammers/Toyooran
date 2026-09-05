@@ -167,7 +167,7 @@ async function startServer() {
   app.use(express.json({ limit: '100kb' }));
   app.use(cookieParser());
   app.use('/api', (req, res, next) => {
-    if (['POST', 'PUT', 'PATCH', 'DELETE'].includes(req.method) && !req.path.startsWith('/auth/login') && !verifyCsrf(req)) return res.status(403).json({ error: 'CSRF token نامعتبر است.' });
+    if (['POST', 'PUT', 'PATCH', 'DELETE'].includes(req.method) && !req.path.startsWith('/auth/login') && !req.path.startsWith('/consultation') && !verifyCsrf(req)) return res.status(403).json({ error: 'CSRF token نامعتبر است.' });
     next();
   });
 

@@ -239,8 +239,8 @@ async function startServer() {
         timestamp
       } = req.body;
 
-      const baleToken = process.env.BALE_BOT_TOKEN;
-      const baleChatId = process.env.BALE_CHAT_ID;
+      const baleToken = process.env.BALE_BOT_TOKEN === 'AI_STUDIO_PREVIEW_DISABLED' ? '' : process.env.BALE_BOT_TOKEN;
+      const baleChatId = process.env.BALE_CHAT_ID === 'AI_STUDIO_PREVIEW_DISABLED' ? '' : process.env.BALE_CHAT_ID;
 
       // Construct formatted Persian message for Bale Messenger
       const formattedLines = [
@@ -305,8 +305,8 @@ async function startServer() {
 
   // Bale bot configuration status
   app.get("/api/bale/status", (_req, res) => {
-    const hasToken = !!process.env.BALE_BOT_TOKEN;
-    const hasChatId = !!process.env.BALE_CHAT_ID;
+    const hasToken = !!process.env.BALE_BOT_TOKEN && process.env.BALE_BOT_TOKEN !== 'AI_STUDIO_PREVIEW_DISABLED';
+    const hasChatId = !!process.env.BALE_CHAT_ID && process.env.BALE_CHAT_ID !== 'AI_STUDIO_PREVIEW_DISABLED';
     res.json({
       configured: hasToken && hasChatId,
       hasToken,

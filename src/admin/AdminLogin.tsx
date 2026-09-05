@@ -152,7 +152,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onBackToSite }) => {
               </div>
             </div>}
 
-            {mfaRequired ? <div><label className="block text-xs font-bold text-slate-300 mb-1.5">کد شش‌رقمی MFA</label><input inputMode="numeric" pattern="[0-9]{6}" maxLength={6} value={mfaCode} onChange={(e) => setMfaCode(e.target.value)} required className="w-full bg-slate-950/80 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white" /></div> : (import.meta.env.VITE_TURNSTILE_SITE_KEY ? <Turnstile siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY} onSuccess={setTurnstileToken} onExpire={() => setTurnstileToken('')} /> : <p className="text-xs text-amber-300">CAPTCHA در تنظیمات محیطی فعال نشده است.</p>)}
+            {mfaRequired ? <div><label className="block text-xs font-bold text-slate-300 mb-1.5">کد شش‌رقمی MFA</label><input inputMode="numeric" pattern="[0-9]{6}" maxLength={6} value={mfaCode} onChange={(e) => setMfaCode(e.target.value)} required className="w-full bg-slate-950/80 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white" /></div> : (import.meta.env.VITE_TURNSTILE_SITE_KEY && import.meta.env.VITE_TURNSTILE_SITE_KEY !== 'AI_STUDIO_PREVIEW_DISABLED' ? <Turnstile siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY} onSuccess={setTurnstileToken} onExpire={() => setTurnstileToken('')} /> : <p className="text-xs text-amber-300">CAPTCHA در Preview غیرفعال است.</p>)}
 
             <button
               type="submit"

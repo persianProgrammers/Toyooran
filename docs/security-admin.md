@@ -16,6 +16,8 @@
 
 MFA با TOTP در backend فراهم شده است. پس از ورود، از endpointهای `/api/auth/mfa/setup` و `/api/auth/mfa/confirm` برای ساخت secret و تأیید کد برنامه Authenticator استفاده کنید. secret را فقط در password manager نگه دارید. قبل از فعال‌سازی MFA در محیط اصلی، backup امن database تهیه کنید.
 
+در پاسخ endpoint `mfa/setup`، ده recovery code یک‌بارمصرف نیز برگردانده می‌شود. آن‌ها را فقط یک‌بار، به‌صورت آفلاین و در password manager ذخیره کنید. هر کد پس از یک بار استفاده حذف منطقی می‌شود و دوباره قابل استفاده نیست. recovery code جایگزین کد TOTP در مرحله ورود است و پس از مصرف باید یک MFA setup جدید یا دستگاه پشتیبان تنظیم شود.
+
 ## نکات عملیاتی
 
 فقط HTTPS استفاده کنید، دسترسی فایل SQLite را محدود کنید، `DATA_DIR` را خارج از web root قرار دهید، backup رمزنگاری‌شده و rotation کلیدها داشته باشید، و لاگ‌های ورود ناموفق و rate-limit را در سامانه مانیتورینگ ثبت کنید. هرگز `.env`، database یا مقدار secret را commit نکنید.

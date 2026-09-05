@@ -61,9 +61,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
   isOpen,
   onClose,
 }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(true); // Default true for instant preview
-  const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('toyooran1403');
+  const [isAuthenticated] = useState(false);
   const [activeTab, setActiveTab] = useState<'dashboard' | 'quotes' | 'consultations' | 'products' | 'ai-settings'>('dashboard');
 
   const [quotes, setQuotes] = useState<QuoteItem[]>([]);

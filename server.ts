@@ -150,9 +150,28 @@ function injectSeoTags(html: string, reqPath: string, baseUrl: string): string {
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT || 3000);
+  app.disable('x-powered-by');
+  app.use((_req, res, next) => {
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('X-Frame-Options', 'DENY');
+    res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+    res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+    if (process.env.NODE_ENV === 'production') res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+    next();
+  });
+  app.use(express.json({ limit: '100kb' }));
 
-  app.use(express.json());
+  const apiHits = new Map<string, { count: number; resetAt: number }>();
+  app.use('/api', (req, res, next) => {
+    const now = Date.now();
+    const key = req.ip || 'unknown';
+    const entry = apiHits.get(key) || { count: 0, resetAt: now + 60_000 };
+    if (entry.resetAt <= now) { entry.count = 0; entry.resetAt = now + 60_000; }
+    entry.count += 1; apiHits.set(key, entry);
+    if (entry.count > 60) return res.status(429).json({ success: false, error: 'درخواست‌های بیش از حد' });
+    next();
+  });
 
   // API Route: Send form submission / consultation to Bale Bot
   app.post("/api/consultation", async (req, res) => {

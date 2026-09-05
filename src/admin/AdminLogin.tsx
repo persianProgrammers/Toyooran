@@ -19,25 +19,29 @@ interface AdminLoginProps {
 }
 
 export const AdminLogin: React.FC<AdminLoginProps> = ({ onBackToSite }) => {
-  const { login } = useData();
-  const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('admin123');
+  const { login, setupPassword, hasAdminPassword } = useData();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [captchaAnswer, setCaptchaAnswer] = useState('');
+  const [captcha] = useState(() => { const a = Math.floor(Math.random() * 8) + 2; const b = Math.floor(Math.random() * 8) + 2; return { a, b }; });
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     setIsLoading(true);
-
-    setTimeout(() => {
-      const result = login(username, password);
-      if (!result.success) {
-        setError(result.error || 'اطلاعات ورود نامعتبر است.');
-        setIsLoading(false);
-      }
-    }, 400);
+    if (Number(captchaAnswer) !== captcha.a + captcha.b) { setError('پاسخ کپچا نادرست است.'); setIsLoading(false); return; }
+    if (!hasAdminPassword) {
+      if (password !== confirmPassword) { setError('تکرار رمز عبور یکسان نیست.'); setIsLoading(false); return; }
+      const result = await setupPassword(password);
+      if (!result.success) { setError(result.error || 'رمز عبور قابل قبول نیست.'); setIsLoading(false); return; }
+      setError('رمز اولیه ثبت شد؛ اکنون با همان رمز وارد شوید.'); setPassword(''); setConfirmPassword(''); setIsLoading(false); return;
+    }
+    const result = await login(username, password);
+    if (!result.success) { setError(result.error || 'اطلاعات ورود نامعتبر است.'); setIsLoading(false); }
   };
 
   const handleQuickFill = (user: string, pass: string) => {
@@ -147,6 +151,9 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onBackToSite }) => {
               </div>
             </div>
 
+            {!hasAdminPassword && <div><label className="block text-xs font-bold text-slate-300 mb-1.5">تکرار رمز عبور</label><input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required minLength={12} className="w-full bg-slate-950/80 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white" /></div>}
+            <div><label className="block text-xs font-bold text-slate-300 mb-1.5">کپچا: حاصل {captcha.a} + {captcha.b} چیست؟</label><input inputMode="numeric" value={captchaAnswer} onChange={(e) => setCaptchaAnswer(e.target.value)} required className="w-full bg-slate-950/80 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white" /></div>
+
             <button
               type="submit"
               disabled={isLoading}
@@ -163,31 +170,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onBackToSite }) => {
             </button>
           </form>
 
-          {/* Quick Demo Credentials Assistant */}
-          <div className="mt-6 pt-5 border-t border-slate-800/80">
-            <p className="text-[11px] text-slate-400 font-medium mb-2.5 flex items-center gap-1">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              <span>دسترسی سریع پیش‌فرض سیستم:</span>
-            </p>
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                type="button"
-                onClick={() => handleQuickFill('admin', 'admin123')}
-                className="text-right bg-slate-800/60 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-700/50 transition-colors group"
-              >
-                <div className="text-[11px] font-bold text-white group-hover:text-amber-300">مدیر ارشد (admin)</div>
-                <div className="text-[10px] text-slate-400 font-mono">admin123</div>
-              </button>
-              <button
-                type="button"
-                onClick={() => handleQuickFill('toyooran', 'admin123')}
-                className="text-right bg-slate-800/60 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-700/50 transition-colors group"
-              >
-                <div className="text-[11px] font-bold text-white group-hover:text-amber-300">مدیر فروش و فنی</div>
-                <div className="text-[10px] text-slate-400 font-mono">admin123</div>
-              </button>
-            </div>
-          </div>
+          <p className="mt-6 text-center text-[11px] text-slate-500">رمز عبور پیش‌فرض وجود ندارد؛ آن را فقط روی همین دستگاه و در اولین ورود تنظیم کنید.</p>
 
         </div>
 

@@ -98,7 +98,9 @@ interface DataContextType {
   // Authentication
   adminUser: AdminUser | null;
   isAuthenticated: boolean;
-  login: (username: string, password: string) => { success: boolean; error?: string };
+  login: (username: string, password: string) => Promise<{ success: boolean; error?: string }>;
+  setupPassword: (password: string) => Promise<{ success: boolean; error?: string }>;
+  hasAdminPassword: boolean;
   logout: () => void;
   changePassword: (oldPassword: string, newPassword: string) => { success: boolean; error?: string };
 
@@ -251,8 +253,12 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
   
   const [adminUser, setAdminUser] = useState<AdminUser | null>(() => {
-    const saved = localStorage.getItem(STORAGE_KEYS.ADMIN_USER);
+    const saved = sessionStorage.getItem(STORAGE_KEYS.ADMIN_USER);
     return saved ? JSON.parse(saved) : null;
+  });
+  const [hasAdminPassword, setHasAdminPassword] = useState(() => {
+    const stored = localStorage.getItem(STORAGE_KEYS.ADMIN_PASSWORD);
+    return Boolean(stored && stored.startsWith('sha256:'));
   });
 
   // Sync to localStorage
@@ -298,9 +304,9 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   useEffect(() => {
     if (adminUser) {
-      localStorage.setItem(STORAGE_KEYS.ADMIN_USER, JSON.stringify(adminUser));
+      sessionStorage.setItem(STORAGE_KEYS.ADMIN_USER, JSON.stringify(adminUser));
     } else {
-      localStorage.removeItem(STORAGE_KEYS.ADMIN_USER);
+      sessionStorage.removeItem(STORAGE_KEYS.ADMIN_USER);
     }
   }, [adminUser]);
 
@@ -442,37 +448,50 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setConsultationRequests(prev => prev.filter(c => c.id !== id));
   };
 
-  // Auth Operations
-  const login = (username: string, pass: string) => {
-    const currentPass = localStorage.getItem(STORAGE_KEYS.ADMIN_PASSWORD) || 'admin123';
-    // Default valid usernames: admin, toyooran, manager
-    const validUsers = ['admin', 'toyooran', 'manager'];
-    
-    if (validUsers.includes(username.toLowerCase().trim()) && pass.trim() === currentPass) {
-      const user: AdminUser = {
-        username: username.toLowerCase().trim(),
-        displayName: username.toLowerCase().trim() === 'admin' ? 'مدیریت کل سیستم' : 'مدیر مهندسی و فروش',
-        role: 'superadmin'
-      };
-      setAdminUser(user);
-      return { success: true };
-    }
-    return { success: false, error: 'نام کاربری یا رمز عبور اشتباه است.' };
+  // Auth Operations: no default credentials; passwords are never stored in plaintext.
+  const hashPassword = async (password: string) => {
+    const bytes = new TextEncoder().encode(password);
+    const digest = await crypto.subtle.digest('SHA-256', bytes);
+    return `sha256:${Array.from(new Uint8Array(digest)).map(byte => byte.toString(16).padStart(2, '0')).join('')}`;
   };
 
-  const logout = () => {
-    setAdminUser(null);
+  const setupPassword = async (password: string) => {
+    const value = password.trim();
+    if (value.length < 12) {
+      return { success: false, error: 'رمز اولیه باید حداقل ۱۲ کاراکتر باشد.' };
+    }
+    localStorage.setItem(STORAGE_KEYS.ADMIN_PASSWORD, await hashPassword(value));
+    setHasAdminPassword(true);
+    return { success: true };
   };
 
-  const changePassword = (oldPassword: string, newPassword: string) => {
-    const currentPass = localStorage.getItem(STORAGE_KEYS.ADMIN_PASSWORD) || 'admin123';
-    if (oldPassword.trim() !== currentPass) {
-      return { success: false, error: 'رمز عبور فعلی نادرست است.' };
+  const login = async (username: string, pass: string) => {
+    if (!hasAdminPassword) return { success: false, error: 'برای شروع، یک رمز عبور قوی تعیین کنید.' };
+    const normalizedUser = username.toLowerCase().trim();
+    if (!['admin', 'toyooran', 'manager'].includes(normalizedUser)) {
+      return { success: false, error: 'نام کاربری یا رمز عبور اشتباه است.' };
     }
-    if (newPassword.trim().length < 5) {
-      return { success: false, error: 'رمز عبور جدید باید حداقل ۵ کاراکتر باشد.' };
+    const lockKey = 'toyooran_admin_login_attempts_v1';
+    const attempts = JSON.parse(localStorage.getItem(lockKey) || '{"count":0,"until":0}');
+    if (attempts.until > Date.now()) return { success: false, error: 'تلاش‌های ورود زیاد است؛ چند دقیقه بعد دوباره امتحان کنید.' };
+    const valid = await hashPassword(pass.trim()) === localStorage.getItem(STORAGE_KEYS.ADMIN_PASSWORD);
+    if (!valid) {
+      const count = attempts.count + 1;
+      localStorage.setItem(lockKey, JSON.stringify(count >= 5 ? { count: 0, until: Date.now() + 5 * 60 * 1000 } : { count, until: 0 }));
+      return { success: false, error: 'نام کاربری یا رمز عبور اشتباه است.' };
     }
-    localStorage.setItem(STORAGE_KEYS.ADMIN_PASSWORD, newPassword.trim());
+    localStorage.removeItem(lockKey);
+    setAdminUser({ username: normalizedUser, displayName: normalizedUser === 'admin' ? 'مدیریت کل سیستم' : 'مدیر مهندسی و فروش', role: 'superadmin' });
+    return { success: true };
+  };
+
+  const logout = () => setAdminUser(null);
+
+  const changePassword = async (oldPassword: string, newPassword: string) => {
+    const value = newPassword.trim();
+    if (await hashPassword(oldPassword.trim()) !== localStorage.getItem(STORAGE_KEYS.ADMIN_PASSWORD)) return { success: false, error: 'رمز عبور فعلی نادرست است.' };
+    if (value.length < 12) return { success: false, error: 'رمز عبور جدید باید حداقل ۱۲ کاراکتر باشد.' };
+    localStorage.setItem(STORAGE_KEYS.ADMIN_PASSWORD, await hashPassword(value));
     return { success: true };
   };
 
@@ -489,6 +508,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setQuoteRequests(INITIAL_QUOTES);
     setConsultationRequests(INITIAL_CONSULTATIONS);
     localStorage.removeItem(STORAGE_KEYS.ADMIN_PASSWORD);
+    setHasAdminPassword(false);
   };
 
   // Backup Export/Import
@@ -580,6 +600,8 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
         adminUser,
         isAuthenticated: !!adminUser,
         login,
+        setupPassword,
+        hasAdminPassword,
         logout,
         changePassword,
         resetToDefaults,

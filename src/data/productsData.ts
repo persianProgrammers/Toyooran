@@ -15,9 +15,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "هیتر گازی مدل GH 0625 از محصولات کم‌مصرف و پربازده شرکت انرژی است که برای گرمایش فضاهای بسته با حجم متوسط ۴۰۰ تا ۷۰۰ مترمکعب طراحی...",
     "fullDescription": "هیتر گازی مدل GH 0625 از محصولات کم‌مصرف و پربازده شرکت انرژی است که برای گرمایش فضاهای بسته با حجم متوسط ۴۰۰ تا ۷۰۰ مترمکعب طراحی شده است. این هیتر با بهره‌گیری از مبدل صفحه‌ای ۵ پره، شیر کنترل گازی SIT ایتالیا و قابلیت نصب ترموستات، گزینه‌ای مطمئن برای سالن‌های پرورشی و کاربری‌های صنعتی سبک محسوب می‌شود.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-001.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-001.webp"
     ],
     "advantages": [
       "راندمان حرارتی بالا و مصرف سوخت بهینه",
@@ -71,9 +71,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "فن سیرکوله کولاک گستر یک فن صنعتی با راندمان بالا است که برای گردش یکنواخت هوا، جلوگیری از تجمع حرارت و رطوبت و کاهش استرس گرمایی ...",
     "fullDescription": "فن سیرکوله کولاک گستر یک فن صنعتی با راندمان بالا است که برای گردش یکنواخت هوا، جلوگیری از تجمع حرارت و رطوبت و کاهش استرس گرمایی در سالن‌های مرغداری، گلخانه‌ها و فضاهای صنعتی با هوادهی ۷۰۰۰ تا ۱۲۰۰۰ مترمکعب طراحی شده است.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-002.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-002.webp"
     ],
     "advantages": [
       "توزیع یکنواخت هوا و جلوگیری از ایجاد نقاط سرد و گرم",
@@ -118,9 +118,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "هیتر ایستاده ECO300 قوی‌ترین مدل در سری ECO شرکت کولاک گستر است که برای گرمایش سالن‌های بزرگ مرغداری، گلخانه‌ها و واحدهای صنعتی با...",
     "fullDescription": "هیتر ایستاده ECO300 قوی‌ترین مدل در سری ECO شرکت کولاک گستر است که برای گرمایش سالن‌های بزرگ مرغداری، گلخانه‌ها و واحدهای صنعتی با ظرفیت حرارتی ۳۰۰٬۰۰۰ کیلوکالری بر ساعت طراحی گردیده است.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-003.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-003.webp"
     ],
     "advantages": [
       "ظرفیت حرارتی بسیار بالا و پوشش‌دهی سالن‌های وسیع",
@@ -169,9 +169,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "هیتر ایستاده ECO250 سه‌فاز برای گرمایش سریع و یکنواخت سالن‌های صنعتی و پرورشی بزرگ طراحی شده است و با بدنه مقاوم و سیستم احتراق پی...",
     "fullDescription": "هیتر ایستاده ECO250 سه‌فاز برای گرمایش سریع و یکنواخت سالن‌های صنعتی و پرورشی بزرگ طراحی شده است و با بدنه مقاوم و سیستم احتراق پیشرفته در محیط‌های پرگردوغبار عملکردی پایدار ارائه می‌دهد.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-004.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-004.webp"
     ],
     "advantages": [
       "گرمایش سریع و یکنواخت با پوشش‌دهی وسیع",
@@ -212,9 +212,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "هیتر ایستاده ECO150 با ظرفیت ۱۵۰٬۰۰۰ کیلوکالری و سیستم دمندگی قوی، توانایی ایجاد گرمایش پایدار و سریع در سالن‌های پرورش طیور، بوقل...",
     "fullDescription": "هیتر ایستاده ECO150 با ظرفیت ۱۵۰٬۰۰۰ کیلوکالری و سیستم دمندگی قوی، توانایی ایجاد گرمایش پایدار و سریع در سالن‌های پرورش طیور، بوقلمون و گلخانه‌ها را دارد.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-005.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-005.webp"
     ],
     "advantages": [
       "فن با قدرت هوادهی ۵۰۰۰ تا ۶۰۰۰ مترمکعب بر ساعت",
@@ -259,9 +259,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "مشعل صنعتی دوگانه‌سوز KGY-BRN-D با قابلیت کار با گاز طبیعی و گازوئیل در ظرفیت‌های ۳۰٬۰۰۰ تا ۴۵۰٬۰۰۰ کیلوکالری، جهت استفاده در دیگ‌...",
     "fullDescription": "مشعل صنعتی دوگانه‌سوز KGY-BRN-D با قابلیت کار با گاز طبیعی و گازوئیل در ظرفیت‌های ۳۰٬۰۰۰ تا ۴۵۰٬۰۰۰ کیلوکالری، جهت استفاده در دیگ‌های آب‌گرم، کوره‌ها و هیترهای هوای گرم طراحی شده است.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-006.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-006.webp"
     ],
     "advantages": [
       "قابلیت کارکرد منعطف با دو نوع سوخت گاز و گازوئیل",
@@ -302,9 +302,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "مشعل گازوئیلی پرقدرت KGY-BRN-O با سیستم پاشش دقیق و جرقه‌زنی خودکار، احتراق کامل و پایدار گازوئیل را در دیگ‌ها و تجهیزات گرمایشی ص...",
     "fullDescription": "مشعل گازوئیلی پرقدرت KGY-BRN-O با سیستم پاشش دقیق و جرقه‌زنی خودکار، احتراق کامل و پایدار گازوئیل را در دیگ‌ها و تجهیزات گرمایشی صنعتی مرغداری تضمین می‌کند.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-007.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-007.webp"
     ],
     "advantages": [
       "احتراق کامل با کمترین مصرف سوخت و راندمان بالا",
@@ -345,9 +345,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "مشعل تمام گازی KGY-BRN-G با طراحی مهندسی، مصرف اقتصادی گاز و سیستم نظارت خودکار بر شعله، گزینه‌ای ایده‌آل برای کوره‌های هوای گرم و...",
     "fullDescription": "مشعل تمام گازی KGY-BRN-G با طراحی مهندسی، مصرف اقتصادی گاز و سیستم نظارت خودکار بر شعله، گزینه‌ای ایده‌آل برای کوره‌های هوای گرم و هیترهای سالن‌های پرورش است.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-008.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-008.webp"
     ],
     "advantages": [
       "راندمان احتراق حداکثری و کنترل الکترونیکی شعله",
@@ -388,9 +388,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "هواکش صنعتی سنگین KGFI140 با دبی هوادهی خارق‌العاده ۴۶٬۰۰۰ مترمکعب در ساعت، پروانه ۱۴۰ سانتی‌متری استیل و موتور ۱.۱ کیلووات، برای ...",
     "fullDescription": "هواکش صنعتی سنگین KGFI140 با دبی هوادهی خارق‌العاده ۴۶٬۰۰۰ مترمکعب در ساعت، پروانه ۱۴۰ سانتی‌متری استیل و موتور ۱.۱ کیلووات، برای تهویه تونلی سالن‌های بزرگ پرورشی تولید شده است.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-009.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-009.webp"
     ],
     "advantages": [
       "دبی هوادهی بسیار بالا: ۴۶٬۰۰۰ مترمکعب بر ساعت",
@@ -439,9 +439,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "هواکش صنعتی ۱۰۰ سانتی‌متری کولاک گستر با هوادهی ۳۰٬۰۰۰ مترمکعب در ساعت و پروانه استیل، انتخابی استاندارد برای تهویه طولی و جانبی س...",
     "fullDescription": "هواکش صنعتی ۱۰۰ سانتی‌متری کولاک گستر با هوادهی ۳۰٬۰۰۰ مترمکعب در ساعت و پروانه استیل، انتخابی استاندارد برای تهویه طولی و جانبی سالن‌های مرغداری و گلخانه‌ها است.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-010.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-010.webp"
     ],
     "advantages": [
       "دبی هوادهی ۳۰٬۰۰۰ مترمکعب بر ساعت با مصرف بهینه",
@@ -490,9 +490,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر شعله مستقیم KG100 با توان ۱۰۰٬۰۰۰ کیلوکالری در ساعت و فن دمنده ۶۰۰۰ مترمکعبی، گرمایش سریع و با راندمان نزدیک به ۱۰۰٪ را در...",
     "fullDescription": "جت هیتر شعله مستقیم KG100 با توان ۱۰۰٬۰۰۰ کیلوکالری در ساعت و فن دمنده ۶۰۰۰ مترمکعبی، گرمایش سریع و با راندمان نزدیک به ۱۰۰٪ را در سالن‌های پرورش طیور و گلخانه‌ها ایجاد می‌کند.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-011.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-011.webp"
     ],
     "advantages": [
       "راندمان حرارتی بالا و توزیع پرشتاب گرما در سالن",
@@ -537,9 +537,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "پمپ تزریق داروی اصل دوزاترون فرانسه مدل DSA 15، بدون نیاز به برق و با نیروی فشار آب، محلول‌های دارویی و ویتامینی را با دقت بالا و ...",
     "fullDescription": "پمپ تزریق داروی اصل دوزاترون فرانسه مدل DSA 15، بدون نیاز به برق و با نیروی فشار آب، محلول‌های دارویی و ویتامینی را با دقت بالا و نسبت ثابت به خطوط آبخوری تزریق می‌نماید.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-012.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-012.webp"
     ],
     "advantages": [
       "عملکرد کاملاً مکانیکی و بدون نیاز به اتصال برق",
@@ -585,9 +585,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "بشقاب دانخوری چیکن پلاس مهندسی معکوس شده از شرکت Jumapex اروپا با لبه کوتاه ۴۵ میلی‌متری، امکان تغذیه مستقیم جوجه از روز اول بدون ...",
     "fullDescription": "بشقاب دانخوری چیکن پلاس مهندسی معکوس شده از شرکت Jumapex اروپا با لبه کوتاه ۴۵ میلی‌متری، امکان تغذیه مستقیم جوجه از روز اول بدون نیاز به سینی را فراهم می‌آورد.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-013.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-013.webp"
     ],
     "advantages": [
       "قابل استفاده از یک‌روزگی تا پایان دوره (حذف کامل سینی)",
@@ -628,9 +628,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "هواکش صنعتی با توری محافظ فلزی مستحکم در سایزهای ۱۰۰ و ۱۴۰ سانتی‌متر برای تخلیه پیوسته و هوادهی یکنواخت در سالن‌های دارای کنترل ته...",
     "fullDescription": "هواکش صنعتی با توری محافظ فلزی مستحکم در سایزهای ۱۰۰ و ۱۴۰ سانتی‌متر برای تخلیه پیوسته و هوادهی یکنواخت در سالن‌های دارای کنترل تهویه مرکزی.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-014.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-014.webp"
     ],
     "advantages": [
       "طراحی ساده، مقاوم و استهلاک بسیار پایین",
@@ -667,9 +667,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "هواکش صنعتی دمپردار اتومات با مکانیزم کلاچ گریز از مرکز، جریان هوای پرقدرت در حین کار و انسداد کامل ورود هوای سرد در زمان خاموشی ر...",
     "fullDescription": "هواکش صنعتی دمپردار اتومات با مکانیزم کلاچ گریز از مرکز، جریان هوای پرقدرت در حین کار و انسداد کامل ورود هوای سرد در زمان خاموشی را فراهم می‌کند.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-015.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-015.webp"
     ],
     "advantages": [
       "دمپر اتوماتیک جهت هوابندی کامل سالن",
@@ -706,9 +706,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "قفس‌های باتری تمام مکانیزه مرغ تخمگذار تا ۱۲ طبقه مجهز به کانوایرهای جمع‌آوری تخم‌مرغ، نوار کودکش PP ایتالیا و خطوط اتومات دانخوری...",
     "fullDescription": "قفس‌های باتری تمام مکانیزه مرغ تخمگذار تا ۱۲ طبقه مجهز به کانوایرهای جمع‌آوری تخم‌مرغ، نوار کودکش PP ایتالیا و خطوط اتومات دانخوری و آبخوری نیپل.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-016.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-016.webp"
     ],
     "advantages": [
       "افزایش چشمگیر ظرفیت گله در واحد سطح",
@@ -749,9 +749,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "پد سلولزی تبخیری با کاغذ کرافت وارداتی با راندمان تبخیر بالای ۸۵ درصد و افت فشار ناچیز، جهت کاهش محسوس دمای سالن‌های پرورشی در فصو...",
     "fullDescription": "پد سلولزی تبخیری با کاغذ کرافت وارداتی با راندمان تبخیر بالای ۸۵ درصد و افت فشار ناچیز، جهت کاهش محسوس دمای سالن‌های پرورشی در فصول گرم.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-017.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-017.webp"
     ],
     "advantages": [
       "عمر مفید ۳ تا ۵ برابر بیشتر نسبت به پوشال",
@@ -796,9 +796,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "کولر پلیمری روبروزن مدل BCF-85 با گرید انرژی A، موتور BLDC دایرکت درایو با راندمان ۹۰٪، ۵۰ دور متغیر و پد ۱۰ سانتی‌متری سلولزی با ...",
     "fullDescription": "کولر پلیمری روبروزن مدل BCF-85 با گرید انرژی A، موتور BLDC دایرکت درایو با راندمان ۹۰٪، ۵۰ دور متغیر و پد ۱۰ سانتی‌متری سلولزی با سرمایش پرقدرت و کم‌صدا.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-018.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-018.webp"
     ],
     "advantages": [
       "موتور اینورتری BLDC با ۷۰٪ کاهش مصرف برق",
@@ -839,9 +839,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "سامانه اتوماسیون و پایش هوشمند سالن‌های مرغداری با کنترل خودکار دما، رطوبت، گازهای مضر، زاویه اینلت‌ها و خطوط روشنایی و تغذیه با ا...",
     "fullDescription": "سامانه اتوماسیون و پایش هوشمند سالن‌های مرغداری با کنترل خودکار دما، رطوبت، گازهای مضر، زاویه اینلت‌ها و خطوط روشنایی و تغذیه با ارسال هشدار پیامکی.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-019.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-019.webp"
     ],
     "advantages": [
       "کاهش تا ۶۰٪ مصرف سوخت و انرژی",
@@ -878,9 +878,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "وینچ چدنی سقفی ویژه تنظیم ارتفاع دقیق خطوط آبخوری نیپل متناسب با سن پرنده جهت جلوگیری از خیسی بستر و تسهیل شستشوی سالن.",
     "fullDescription": "وینچ چدنی سقفی ویژه تنظیم ارتفاع دقیق خطوط آبخوری نیپل متناسب با سن پرنده جهت جلوگیری از خیسی بستر و تسهیل شستشوی سالن.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-020.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-020.webp"
     ],
     "advantages": [
       "بدنه چدنی سنگین با استحکام بالا",
@@ -916,9 +916,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "نورگیر و بادشکن پلیمری آنتی UV سایز ۳۰×۶۰ نصب‌شونده بر روی دیوار خارجی اینلت‌ها جهت ایجاد تاریکی و جلوگیری از نفوذ باد مستقیم و با...",
     "fullDescription": "نورگیر و بادشکن پلیمری آنتی UV سایز ۳۰×۶۰ نصب‌شونده بر روی دیوار خارجی اینلت‌ها جهت ایجاد تاریکی و جلوگیری از نفوذ باد مستقیم و باران.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-021.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-021.webp"
     ],
     "advantages": [
       "ایجاد محدودیت نوری استاندارد در سالن",
@@ -955,9 +955,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "دریچه شاتر عایق ورودی هوا نصب‌شونده در برابر پدهای سلولزی جهت جلوگیری از ورود هوای سرد در زمستان و هدایت بهینه جریان هوا در تابستا...",
     "fullDescription": "دریچه شاتر عایق ورودی هوا نصب‌شونده در برابر پدهای سلولزی جهت جلوگیری از ورود هوای سرد در زمستان و هدایت بهینه جریان هوا در تابستان.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-022.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-022.webp"
     ],
     "advantages": [
       "جلوگیری از افت حرارت در زمستان",
@@ -989,9 +989,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "خط انتقال دان تمام مکانیزه با لوله‌های ضد سایش و فنر اوگر هلیکال به همراه سنسورهای قطع‌کن خازنی جهت انتقال دان از سیلوها به هاپرها...",
     "fullDescription": "خط انتقال دان تمام مکانیزه با لوله‌های ضد سایش و فنر اوگر هلیکال به همراه سنسورهای قطع‌کن خازنی جهت انتقال دان از سیلوها به هاپرهای سالن.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-023.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-023.webp"
     ],
     "advantages": [
       "حذف کامل تردد دستی و ارتقای بهداشت",
@@ -1028,9 +1028,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "کوره هوای گرم کابینتی مدل KHG-300 با توان ۳۰۰٬۰۰۰ کیلوکالری، دیگ استنلس استیل نسوز و فن سانتریفیوژ قوی جهت گرمایش ایمن فضاهای بزرگ...",
     "fullDescription": "کوره هوای گرم کابینتی مدل KHG-300 با توان ۳۰۰٬۰۰۰ کیلوکالری، دیگ استنلس استیل نسوز و فن سانتریفیوژ قوی جهت گرمایش ایمن فضاهای بزرگ ۳۰۰۰ تا ۷۰۰۰ مترمکعب.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-024.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-024.webp"
     ],
     "advantages": [
       "دیگ و مبدل استنلس استیل ضدزنگ و نسوز",
@@ -1079,9 +1079,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "کوره هوای گرم ایستاده KHG-200 با ظرفیت ۲۰۰٬۰۰۰ کیلوکالری، محفظه احتراق استیل و دودکش استاندارد برای گرمایش پاک فضاهای ۲۰۰۰ تا ۵۰۰۰...",
     "fullDescription": "کوره هوای گرم ایستاده KHG-200 با ظرفیت ۲۰۰٬۰۰۰ کیلوکالری، محفظه احتراق استیل و دودکش استاندارد برای گرمایش پاک فضاهای ۲۰۰۰ تا ۵۰۰۰ مترمکعب.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-025.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-025.webp"
     ],
     "advantages": [
       "احتراق کامل با خروج دود از دودکش مجزا",
@@ -1122,9 +1122,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "کوره هوای گرم ۱۰۰ هزار عمودی KHG-100 با ابعاد فشرده و فن سانتریفیوژ ۷۵۰ وات، مناسب گرمایش یکنواخت فضاهای ۱۰۰۰ تا ۲۵۰۰ مترمکعب.",
     "fullDescription": "کوره هوای گرم ۱۰۰ هزار عمودی KHG-100 با ابعاد فشرده و فن سانتریفیوژ ۷۵۰ وات، مناسب گرمایش یکنواخت فضاهای ۱۰۰۰ تا ۲۵۰۰ مترمکعب.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-026.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-026.webp"
     ],
     "advantages": [
       "اشغال حداقل سطح زیربنای سالن",
@@ -1169,9 +1169,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "هیتر کابینتی افقی HA-200 با ارتفاع کم مناسب سالن‌های گلخانه‌ای و پرورشی دارای محدودیت ارتفاع، مجهز به دو فن آکسیال ۵۵۰ وات.",
     "fullDescription": "هیتر کابینتی افقی HA-200 با ارتفاع کم مناسب سالن‌های گلخانه‌ای و پرورشی دارای محدودیت ارتفاع، مجهز به دو فن آکسیال ۵۵۰ وات.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-027.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-027.webp"
     ],
     "advantages": [
       "طراحی افقی کم‌ارتفاع",
@@ -1212,9 +1212,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "کوره هوای گرم افقی HA-300 با ظرفیت ۳۰۰ هزار کیلوکالری و دو فن آکسیال ۱۱۰۰ وات برای فضاهای ۲۵۰۰ تا ۷۵۰۰ مترمکعب گلخانه‌ای و سالنی.",
     "fullDescription": "کوره هوای گرم افقی HA-300 با ظرفیت ۳۰۰ هزار کیلوکالری و دو فن آکسیال ۱۱۰۰ وات برای فضاهای ۲۵۰۰ تا ۷۵۰۰ مترمکعب گلخانه‌ای و سالنی.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-028.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-028.webp"
     ],
     "advantages": [
       "ظرفیت حرارتی بالا با ساختار کم‌ارتفاع افقی",
@@ -1255,9 +1255,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "کولر سلولزی پرتابل مدل ONECOOL-6000 با هوادهی ۲۹۰۰ مترمکعب، پد ضد رسوب، مخزن ۶۰ لیتری، ریموت کنترل و پرتاب باد تا ۱۲ متر.",
     "fullDescription": "کولر سلولزی پرتابل مدل ONECOOL-6000 با هوادهی ۲۹۰۰ مترمکعب، پد ضد رسوب، مخزن ۶۰ لیتری، ریموت کنترل و پرتاب باد تا ۱۲ متر.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-029.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-029.webp"
     ],
     "advantages": [
       "چرخ‌دار و قابل حمل آسان",
@@ -1302,9 +1302,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "کولر سلولزی پرتابل COOLEX-9000 با هوادهی ۴۱۰۰ مترمکعب، مخزن ۱۰۰ لیتری و پرتاب باد ۱۵ متری با بازده تبخیر ۸۵٪.",
     "fullDescription": "کولر سلولزی پرتابل COOLEX-9000 با هوادهی ۴۱۰۰ مترمکعب، مخزن ۱۰۰ لیتری و پرتاب باد ۱۵ متری با بازده تبخیر ۸۵٪.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-030.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-030.webp"
     ],
     "advantages": [
       "هوادهی قدرتمند ۴۱۰۰ مترمکعب در ساعت",
@@ -1349,9 +1349,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "کولر سلولزی پلیمری ۱۸۰۰۰ پایین‌زن با سیستم Soft Start و ۵۰ دور متغیر، مناسب خنک‌سازی ۲۵۰ تا ۴۰۰ مترمربع با حداقل مصرف برق.",
     "fullDescription": "کولر سلولزی پلیمری ۱۸۰۰۰ پایین‌زن با سیستم Soft Start و ۵۰ دور متغیر، مناسب خنک‌سازی ۲۵۰ تا ۴۰۰ مترمربع با حداقل مصرف برق.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-031.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-031.webp"
     ],
     "advantages": [
       "کاهش ۸۵ درصدی مصرف انرژی با اینورتر",
@@ -1392,9 +1392,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "کولر پلیمری ۱۸۰۰۰ روبروزن مدل NTAC3/180F با هوادهی ۱۸ هزار مترمکعب، بدنه سبک مقاوم ضد اشعه UV و قابلیت کارکرد مکش و دمش.",
     "fullDescription": "کولر پلیمری ۱۸۰۰۰ روبروزن مدل NTAC3/180F با هوادهی ۱۸ هزار مترمکعب، بدنه سبک مقاوم ضد اشعه UV و قابلیت کارکرد مکش و دمش.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-032.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-032.webp"
     ],
     "advantages": [
       "هوادهی پرقدرت روبروزن مناسب بالکن و دیوار",
@@ -1431,9 +1431,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "کولر سلولزی پلیمری ۱۵۰۰۰ بالازن مدل NTAC9/150U ویژه اتصال به سیستم‌های کانال‌کشی هوایی و سقف سالن‌های پرورشی ۱۷۰ تا ۲۶۰ مترمربع.",
     "fullDescription": "کولر سلولزی پلیمری ۱۵۰۰۰ بالازن مدل NTAC9/150U ویژه اتصال به سیستم‌های کانال‌کشی هوایی و سقف سالن‌های پرورشی ۱۷۰ تا ۲۶۰ مترمربع.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-033.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-033.webp"
     ],
     "advantages": [
       "خروجی بالازن با فن آکسیال مخصوص",
@@ -1474,9 +1474,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "کولر سلولزی ۱۵ هزار پایین‌زن البرز با انتقال مستقیم هوا به پایین، حذف تسمه و پولی و سیستم هوشمند اینورتر ۵۰ سرعته.",
     "fullDescription": "کولر سلولزی ۱۵ هزار پایین‌زن البرز با انتقال مستقیم هوا به پایین، حذف تسمه و پولی و سیستم هوشمند اینورتر ۵۰ سرعته.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-034.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-034.webp"
     ],
     "advantages": [
       "خروجی پایین‌زن بدون لرزش و صدا",
@@ -1512,9 +1512,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "کولر سلولزی پلیمری ۱۸۰۰۰ بالازن با ظرفیت هوادهی بالا برای سالن‌های بزرگ تا ۴۰۰ مترمربع، مجهز به پدهای سلولزی چهارگانه و بدنه پلیمر...",
     "fullDescription": "کولر سلولزی پلیمری ۱۸۰۰۰ بالازن با ظرفیت هوادهی بالا برای سالن‌های بزرگ تا ۴۰۰ مترمربع، مجهز به پدهای سلولزی چهارگانه و بدنه پلیمری آنتی UV.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-035.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-035.webp"
     ],
     "advantages": [
       "خروجی بالازن پرقدرت",
@@ -1551,9 +1551,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "کولر پلیمری ۱۵ هزار روبروزن مدل NTAC3/150F با خروجی مستقیم هوا، فیلتر توری ذرات معلق و پدهای سلولزی با خنک‌کنندگی عالی برای فضاهای...",
     "fullDescription": "کولر پلیمری ۱۵ هزار روبروزن مدل NTAC3/150F با خروجی مستقیم هوا، فیلتر توری ذرات معلق و پدهای سلولزی با خنک‌کنندگی عالی برای فضاهای ۱۷۰ تا ۲۶۰ مترمربع.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-036.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-036.webp"
     ],
     "advantages": [
       "خروجی مستقیم روبروزن با نصب سریع",
@@ -1590,9 +1590,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر برقی سه‌فاز NE15 با توان ۱۵ کیلووات، فن داخلی پرتاب گرما و حجم هوادهی ۱۰۵۰ مترمکعب، مناسب گرمایش پاک فضاهای ۱۵۰ تا ۴۰۰ متر...",
     "fullDescription": "جت هیتر برقی سه‌فاز NE15 با توان ۱۵ کیلووات، فن داخلی پرتاب گرما و حجم هوادهی ۱۰۵۰ مترمکعب، مناسب گرمایش پاک فضاهای ۱۵۰ تا ۴۰۰ مترمکعب بدون مصرف سوخت فسیلی.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-037.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-037.webp"
     ],
     "advantages": [
       "بدون هرگونه آلایندگی و دود",
@@ -1633,9 +1633,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر برقی تک‌فاز پرتابل NE3 با توان ۳ کیلووات و فن دمنده، انتخابی جمع‌وجور و سبک برای گرمایش سریع فضاهای ۵۰ تا ۱۲۰ مترمکعب.",
     "fullDescription": "جت هیتر برقی تک‌فاز پرتابل NE3 با توان ۳ کیلووات و فن دمنده، انتخابی جمع‌وجور و سبک برای گرمایش سریع فضاهای ۵۰ تا ۱۲۰ مترمکعب.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-038.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-038.webp"
     ],
     "advantages": [
       "بسیار سبک و قابل حمل آسان",
@@ -1672,9 +1672,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "مینی جت هیتر گازی مدل ME-50 با توان ۵۰ هزار کیلوکالری، مصرف ۶ مترمکعب گاز در ساعت و فن ۲۳۰۰ مترمکعبی با پرتاب باد گرم تا ۱۰ متر.",
     "fullDescription": "مینی جت هیتر گازی مدل ME-50 با توان ۵۰ هزار کیلوکالری، مصرف ۶ مترمکعب گاز در ساعت و فن ۲۳۰۰ مترمکعبی با پرتاب باد گرم تا ۱۰ متر.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-039.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-039.webp"
     ],
     "advantages": [
       "کوره و بدنه تمام استنلس استیل نسوز",
@@ -1715,9 +1715,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر دوموتوره دودکش‌دار گازوئیلی با توان ۷۰ هزار کیلوکالری و تخلیه کامل گازهای احتراق به بیرون سالن، ایده‌آل برای گلخانه‌ها و م...",
     "fullDescription": "جت هیتر دوموتوره دودکش‌دار گازوئیلی با توان ۷۰ هزار کیلوکالری و تخلیه کامل گازهای احتراق به بیرون سالن، ایده‌آل برای گلخانه‌ها و مرغداری‌های حساس.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-040.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-040.webp"
     ],
     "advantages": [
       "موتور دوم جهت تامین اکسیژن احتراق از بیرون",
@@ -1762,9 +1762,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر دوموتوره دودکش‌دار گازی با ظرفیت ۷۰٬۰۰۰ کیلوکالری و موتور دوم تامین هوای تازه، گرمایی کاملاً تمیز و بدون مونوکسید را تامین...",
     "fullDescription": "جت هیتر دوموتوره دودکش‌دار گازی با ظرفیت ۷۰٬۰۰۰ کیلوکالری و موتور دوم تامین هوای تازه، گرمایی کاملاً تمیز و بدون مونوکسید را تامین می‌کند.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-041.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-041.webp"
     ],
     "advantages": [
       "هوای کاملاً سالم و بدون آلودگی با خروج از دودکش",
@@ -1805,9 +1805,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر دوموتوره دودکش‌دار دوگانه‌سوز ۷۰ هزار با انعطاف در مصرف گاز و گازوئیل، مجهز به اگزاست آلاینده‌ها و سنسور فلوسوئیچ کوره.",
     "fullDescription": "جت هیتر دوموتوره دودکش‌دار دوگانه‌سوز ۷۰ هزار با انعطاف در مصرف گاز و گازوئیل، مجهز به اگزاست آلاینده‌ها و سنسور فلوسوئیچ کوره.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-042.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-042.webp"
     ],
     "advantages": [
       "انعطاف کامل در انتخاب سوخت گاز یا گازوئیل",
@@ -1844,9 +1844,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر گازوئیلی ۱۰۰ هزار با راندمان حرارتی ۹۸٪، فن پرقدرت با هوادهی ۷۰۰۰ مترمکعب و پرتاب باد گرم تا ۲۰ متر، قابلیت نصب آویز و پای...",
     "fullDescription": "جت هیتر گازوئیلی ۱۰۰ هزار با راندمان حرارتی ۹۸٪، فن پرقدرت با هوادهی ۷۰۰۰ مترمکعب و پرتاب باد گرم تا ۲۰ متر، قابلیت نصب آویز و پایه.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-043.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-043.webp"
     ],
     "advantages": [
       "راندمان سوخت ۹۸ درصدی",
@@ -1887,9 +1887,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر گازی ۱۰۰ هزار مدل GE-100 با راندمان ۹۸٪ و دبی ۷۰۰۰ مترمکعب در ساعت، بهترین گزینه برای گرمایش یکنواخت سالن‌های پرورش طیور و...",
     "fullDescription": "جت هیتر گازی ۱۰۰ هزار مدل GE-100 با راندمان ۹۸٪ و دبی ۷۰۰۰ مترمکعب در ساعت، بهترین گزینه برای گرمایش یکنواخت سالن‌های پرورش طیور و گلخانه‌ها.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-044.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-044.webp"
     ],
     "advantages": [
       "مصرف گاز بهینه با شیر برقی استاندارد",
@@ -1930,9 +1930,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر دوگانه‌سوز ۱۰۰ هزار مدل GLD-100 با قابلیت مصرف گاز و گازوئیل، راندمان ۹۸٪، پرتاب ۲۰ متری و تابلو برق ضدآب تمام خودکار.",
     "fullDescription": "جت هیتر دوگانه‌سوز ۱۰۰ هزار مدل GLD-100 با قابلیت مصرف گاز و گازوئیل، راندمان ۹۸٪، پرتاب ۲۰ متری و تابلو برق ضدآب تمام خودکار.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-045.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-045.webp"
     ],
     "advantages": [
       "قابلیت کار با هر دو سوخت گاز و گازوئیل",
@@ -1973,9 +1973,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "مینی جت هیتر گازوئیلی ۵۰ هزار باکدار البرز با باک ۵۰ لیتری، نشانگر سوخت، مصرف ۵ لیتر در ساعت و پوشش فضاهای ۵۰۰ تا ۲۰۰۰ مترمکعب.",
     "fullDescription": "مینی جت هیتر گازوئیلی ۵۰ هزار باکدار البرز با باک ۵۰ لیتری، نشانگر سوخت، مصرف ۵ لیتر در ساعت و پوشش فضاهای ۵۰۰ تا ۲۰۰۰ مترمکعب.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-046.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-046.webp"
     ],
     "advantages": [
       "باک ۵۰ لیتری همراه با قابلیت پرتابل بودن",
@@ -2020,9 +2020,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر گازوئیلی بدون باک ۵۰ هزار MLE-50 با توان ۵۰ هزار کیلوکالری، فتوسل نظارت شعله و قابلیت اتصال مستقیم به لوله‌کشی گازوئیل سال...",
     "fullDescription": "جت هیتر گازوئیلی بدون باک ۵۰ هزار MLE-50 با توان ۵۰ هزار کیلوکالری، فتوسل نظارت شعله و قابلیت اتصال مستقیم به لوله‌کشی گازوئیل سالن.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-047.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-047.webp"
     ],
     "advantages": [
       "کوره استیل نسوز مقاوم در برابر شوک حرارتی",
@@ -2059,9 +2059,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر ۲۵ هزار پرتابل مدل QG-25 با بدنه رنگی، شیر برقی اروپایی و قابلیت کار با گاز مایع (LPG) و گاز شهری جهت فضاهای ۲۰۰ تا ۶۰۰ مت...",
     "fullDescription": "جت هیتر ۲۵ هزار پرتابل مدل QG-25 با بدنه رنگی، شیر برقی اروپایی و قابلیت کار با گاز مایع (LPG) و گاز شهری جهت فضاهای ۲۰۰ تا ۶۰۰ مترمکعب.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-048.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-048.webp"
     ],
     "advantages": [
       "بسیار سبک و پرتابل با توان حرارتی ۲۵ کیلووات",
@@ -2102,9 +2102,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر گازی ۶۵ هزار مدل QG-65 با راندمان ۹۸٪، فن آکسیال کم‌صدا و سیستم خودتنظیم نسبت به تغییرات فشار گاز برای فضاهای ۴۰۰ تا ۲۵۰۰ ...",
     "fullDescription": "جت هیتر گازی ۶۵ هزار مدل QG-65 با راندمان ۹۸٪، فن آکسیال کم‌صدا و سیستم خودتنظیم نسبت به تغییرات فشار گاز برای فضاهای ۴۰۰ تا ۲۵۰۰ مترمکعب.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-049.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-049.webp"
     ],
     "advantages": [
       "سیستم خودتنظیم فشار گاز جهت ممانعت از سوخت ناقص",
@@ -2145,9 +2145,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر گازی ۹۵ هزار مدل QG-95 با هوادهی ۶۰۰۰ مترمکعب بر ساعت و برد ضدآب، پوشش‌دهنده فضاهای ۱۰۰۰ تا ۳۰۰۰ مترمکعب با احتراق کامل.",
     "fullDescription": "جت هیتر گازی ۹۵ هزار مدل QG-95 با هوادهی ۶۰۰۰ مترمکعب بر ساعت و برد ضدآب، پوشش‌دهنده فضاهای ۱۰۰۰ تا ۳۰۰۰ مترمکعب با احتراق کامل.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-050.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-050.webp"
     ],
     "advantages": [
       "هوادهی قدرتمند ۶۰۰۰ مترمکعب در ساعت",
@@ -2188,9 +2188,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر صنعتی سنگین ۱۲۵ کیلووات مدل QG-125 با هوادهی ۸۰۰۰ مترمکعب، مناسب سالن‌های بسیار وسیع تا ۵۰۰۰ مترمکعب با پرتاب گرمای فوق‌ال...",
     "fullDescription": "جت هیتر صنعتی سنگین ۱۲۵ کیلووات مدل QG-125 با هوادهی ۸۰۰۰ مترمکعب، مناسب سالن‌های بسیار وسیع تا ۵۰۰۰ مترمکعب با پرتاب گرمای فوق‌العاده.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-051.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-051.webp"
     ],
     "advantages": [
       "ظرفیت حرارتی بالا: ۱۲۵ کیلووات",
@@ -2231,9 +2231,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر دوموتوره گازی ۲G-100 مجهز به موتور اختصاصی مکش هوای سالم از بیرون سالن، جهت جلوگیری از افت اکسیژن سالن مرغداری و گلخانه.",
     "fullDescription": "جت هیتر دوموتوره گازی ۲G-100 مجهز به موتور اختصاصی مکش هوای سالم از بیرون سالن، جهت جلوگیری از افت اکسیژن سالن مرغداری و گلخانه.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-052.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-052.webp"
     ],
     "advantages": [
       "موتور دوم برای تامین اکسیژن خالص از بیرون سالن",
@@ -2270,9 +2270,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر دوموتوره گازوئیلی ۲L-100 با تغذیه هوای تازه احتراق از بیرون سالن، راندمان ۹۸٪ و فیلتر گازوئیل با محافظت کامل از افت اکسیژن...",
     "fullDescription": "جت هیتر دوموتوره گازوئیلی ۲L-100 با تغذیه هوای تازه احتراق از بیرون سالن، راندمان ۹۸٪ و فیلتر گازوئیل با محافظت کامل از افت اکسیژن.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-053.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-053.webp"
     ],
     "advantages": [
       "تامین هوای احتراق از محیط آزاد بیرونی",
@@ -2309,9 +2309,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر دوموتوره دوگانه‌سوز ۲D-100 با قابلیت مصرف همزمان گاز و گازوئیل و موتور دوم مکش هوای احتراق، تضمین‌کننده گرمای مطبوع و هوای...",
     "fullDescription": "جت هیتر دوموتوره دوگانه‌سوز ۲D-100 با قابلیت مصرف همزمان گاز و گازوئیل و موتور دوم مکش هوای احتراق، تضمین‌کننده گرمای مطبوع و هوای غنی از اکسیژن.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-054.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-054.webp"
     ],
     "advantages": [
       "کارکرد دوموتوره با دو نوع سوخت گاز و گازوئیل",
@@ -2348,9 +2348,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر دوگانه باکدار ۲DB-100 با باک ۱۰۰ لیتری و موتور دوم تامین اکسیژن، امکان کارکرد پرتابل تا ۱۰ ساعت بدون وقفه در نبود لوله‌کشی...",
     "fullDescription": "جت هیتر دوگانه باکدار ۲DB-100 با باک ۱۰۰ لیتری و موتور دوم تامین اکسیژن، امکان کارکرد پرتابل تا ۱۰ ساعت بدون وقفه در نبود لوله‌کشی سوخت را فراهم می‌کند.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-055.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-055.webp"
     ],
     "advantages": [
       "مجهز به باک ۱۰۰ لیتری و نشانگر سطح سوخت",
@@ -2391,9 +2391,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر دو موتوره گازوئیلی باکدار ۲LB-100 با توان ۱۰۰ هزار کیلوکالری، باک ۱۰۰ لیتری و موتور دوم مکش هوای پاک از فضای بیرون.",
     "fullDescription": "جت هیتر دو موتوره گازوئیلی باکدار ۲LB-100 با توان ۱۰۰ هزار کیلوکالری، باک ۱۰۰ لیتری و موتور دوم مکش هوای پاک از فضای بیرون.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-056.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-056.webp"
     ],
     "advantages": [
       "باک ۱۰۰ لیتری پرتابل با کارکرد ۱۰ ساعته مداوم",
@@ -2430,9 +2430,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر نسل جدید کارنو با راندمان ۹۹٪، کاهش ۷۰٪ مصرف برق، شعله‌پخش‌کن دومرحله‌ای توری استیل نسوز و برد سه‌حالته گاز، گازوئیل و دوگ...",
     "fullDescription": "جت هیتر نسل جدید کارنو با راندمان ۹۹٪، کاهش ۷۰٪ مصرف برق، شعله‌پخش‌کن دومرحله‌ای توری استیل نسوز و برد سه‌حالته گاز، گازوئیل و دوگانه.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-057.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-057.webp"
     ],
     "advantages": [
       "راندمان احتراق بالای ۹۹ درصد",
@@ -2469,9 +2469,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر ۱۰۰ هزار گازوئیلی پرتابل مدل GLB-100 با باک ۱۰۰ لیتری، پرتاب باد ۲۰ متری و برد تمام اتوماتیک جهت گرمایش سریع سالن‌های بزرگ...",
     "fullDescription": "جت هیتر ۱۰۰ هزار گازوئیلی پرتابل مدل GLB-100 با باک ۱۰۰ لیتری، پرتاب باد ۲۰ متری و برد تمام اتوماتیک جهت گرمایش سریع سالن‌های بزرگ مرغداری.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-058.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-058.webp"
     ],
     "advantages": [
       "باک ۱۰۰ لیتری با نشانگر سوخت",
@@ -2512,9 +2512,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "جت هیتر دوگانه باکدار ۱۰۰ هزار مدل GLDB-100 با توان حرارتی ۱۰۰ هزار کیلوکالری، فضای پوشش ۱۰۰۰ تا ۴۰۰۰ مترمکعب و انعطاف در سوخت گاز...",
     "fullDescription": "جت هیتر دوگانه باکدار ۱۰۰ هزار مدل GLDB-100 با توان حرارتی ۱۰۰ هزار کیلوکالری، فضای پوشش ۱۰۰۰ تا ۴۰۰۰ مترمکعب و انعطاف در سوخت گاز و گازوئیل.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-059.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-059.webp"
     ],
     "advantages": [
       "پشتیبانی همزمان از گاز و گازوئیل با باک ۱۰۰ لیتری",
@@ -2555,9 +2555,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "پنجره اینلت نوتریکا سایز ۳۰×۶۰ از جنس پلیمر HIPS مقاوم، با فنر جمع‌کننده و بالک‌های منحنی جهت هدایت هوای سرد به زیر سقف و گرم‌سازی...",
     "fullDescription": "پنجره اینلت نوتریکا سایز ۳۰×۶۰ از جنس پلیمر HIPS مقاوم، با فنر جمع‌کننده و بالک‌های منحنی جهت هدایت هوای سرد به زیر سقف و گرم‌سازی یکنواخت در تهویه زمستانی.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-060.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-060.webp"
     ],
     "advantages": [
       "هدایت جریان هوا به مرکز سقف و ممانعت از برخورد باد سرد به جوجه",
@@ -2598,9 +2598,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "هواکش صنعتی ۱۰۰ سانتی‌متری طرح بیگ هردزمن با ۶ پره استیل، موتور ۰.۵۵ کیلووات، دمپر کلاچ‌دار سانتریفیوژ و خروجی هوا ۱۸٬۰۰۰ مترمکعب ...",
     "fullDescription": "هواکش صنعتی ۱۰۰ سانتی‌متری طرح بیگ هردزمن با ۶ پره استیل، موتور ۰.۵۵ کیلووات، دمپر کلاچ‌دار سانتریفیوژ و خروجی هوا ۱۸٬۰۰۰ مترمکعب در ساعت.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-061.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-061.webp"
     ],
     "advantages": [
       "دمپر کلاچ‌دار پلی‌آمید الیاف‌دار با بازشوی خودکار بدون فشار به موتور",
@@ -2641,9 +2641,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "هواکش اصل بیگ هردزمن ۱۴۰ در ۱۴۰ شش پره تمام استیل با حجم هوادهی ۴۴٬۰۰۰ مترمکعب، دمپر کلاچ‌دار گالوانیزه و تسمه سفت‌کن ضد هرزگردی م...",
     "fullDescription": "هواکش اصل بیگ هردزمن ۱۴۰ در ۱۴۰ شش پره تمام استیل با حجم هوادهی ۴۴٬۰۰۰ مترمکعب، دمپر کلاچ‌دار گالوانیزه و تسمه سفت‌کن ضد هرزگردی موتور.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-062.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-062.webp"
     ],
     "advantages": [
       "هوادهی واقعی ۴۴۰۰۰ مترمکعب در ساعت (بی‌نظیر در رده خود)",
@@ -2688,9 +2688,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "هواکش وارداتی اصل بیگ هردزمن ۱۰۰ سانتی‌متری با ۶ پره استیل، دمپر کلاچ‌دار گالوانیزه و خروجی هوای ۱۸۶۲۳ مترمکعب در ساعت.",
     "fullDescription": "هواکش وارداتی اصل بیگ هردزمن ۱۰۰ سانتی‌متری با ۶ پره استیل، دمپر کلاچ‌دار گالوانیزه و خروجی هوای ۱۸۶۲۳ مترمکعب در ساعت.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-063.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-063.webp"
     ],
     "advantages": [
       "کیفیت ساخت فوق‌العاده بالا و موتور سه‌فاز پربازده",
@@ -2731,9 +2731,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "سیستم قفس تمام اتوماتیک پرورش مرغ گوشتی با کفی انعطاف‌پذیر ضد جراحت سینه، کانوایرهای اتومات تخلیه مرغ، دو خط دانخوری بشقابی در هر ...",
     "fullDescription": "سیستم قفس تمام اتوماتیک پرورش مرغ گوشتی با کفی انعطاف‌پذیر ضد جراحت سینه، کانوایرهای اتومات تخلیه مرغ، دو خط دانخوری بشقابی در هر سلول و کودکش نواری PP.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-064.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-064.webp"
     ],
     "advantages": [
       "کاهش ضریب تبدیل (FCR) و تسریع در وزن‌گیری",
@@ -2774,9 +2774,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "مجموعه خط تولید دان شامل آسیاب چکشی/غلطکی با موتور ژن سه‌فاز، میکسر عمودی/افقی همگن‌ساز و بالابر پیچی در ظرفیت‌های ۱ تا ۵ تن در سا...",
     "fullDescription": "مجموعه خط تولید دان شامل آسیاب چکشی/غلطکی با موتور ژن سه‌فاز، میکسر عمودی/افقی همگن‌ساز و بالابر پیچی در ظرفیت‌های ۱ تا ۵ تن در ساعت.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-065.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-065.webp"
     ],
     "advantages": [
       "کاهش محسوس هزینه‌های خوراک با تولید دان در داخل فارم",
@@ -2821,9 +2821,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "پنجره اینلت ۳۰×۶۰ از جنس پلی‌استایرن HIPS مقاوم با دمپر دوجداره عایق فوم، فنر مخفی و لبه‌های ناودانی جهت هدایت بهینه جریان هوای سر...",
     "fullDescription": "پنجره اینلت ۳۰×۶۰ از جنس پلی‌استایرن HIPS مقاوم با دمپر دوجداره عایق فوم، فنر مخفی و لبه‌های ناودانی جهت هدایت بهینه جریان هوای سرد در تهویه زمستانی.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-066.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-066.webp"
     ],
     "advantages": [
       "دمپر دوجداره عایق فوم فشرده جهت جلوگیری از اتلاف حرارت",
@@ -2864,9 +2864,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "پنجره اینلت سایز بزرگ ۳۵×۹۰ طرح بیگ هردزمن مجهز به دفلکتور مدرج و دمپر ناودانی جهت هوادهی متراکم‌تر در سالن‌های بزرگ پرورش طیور.",
     "fullDescription": "پنجره اینلت سایز بزرگ ۳۵×۹۰ طرح بیگ هردزمن مجهز به دفلکتور مدرج و دمپر ناودانی جهت هوادهی متراکم‌تر در سالن‌های بزرگ پرورش طیور.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-067.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-067.webp"
     ],
     "advantages": [
       "ابعاد بزرگ ۳۵×۹۰ برای دبی بالاتر ورود هوا",
@@ -2903,9 +2903,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "دریچه ورودی هوای ۳۰ در ۶۰ اینلت پارس با دمپر ناودانی، لبه‌های پلکانی آب‌بند و مقاومت در برابر محیط‌های اسیدی و گاز آمونیاک سالن.",
     "fullDescription": "دریچه ورودی هوای ۳۰ در ۶۰ اینلت پارس با دمپر ناودانی، لبه‌های پلکانی آب‌بند و مقاومت در برابر محیط‌های اسیدی و گاز آمونیاک سالن.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-068.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-068.webp"
     ],
     "advantages": [
       "آب‌بندی کامل در زمان بسته بودن با لبه پلکانی",
@@ -2942,9 +2942,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "اینلت سایز بزرگ ۳۰×۱۰۵ ساخته شده از ABS درجه یک با پدیده گردبادی ورتکس و طراحی آیرودینامیک درب جهت جابه‌جایی حداکثری هوا در سالن‌ه...",
     "fullDescription": "اینلت سایز بزرگ ۳۰×۱۰۵ ساخته شده از ABS درجه یک با پدیده گردبادی ورتکس و طراحی آیرودینامیک درب جهت جابه‌جایی حداکثری هوا در سالن‌های طویل.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-069.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-069.webp"
     ],
     "advantages": [
       "باز شدن درب مساوی با به جریان افتادن ۷۰٪ هوا",
@@ -2981,9 +2981,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "سیستم قفس تمام اتوماتیک پرورش پولت تخمگذار از جنس گالوانیزه با رنگ الکترواستاتیک، نوار کودکش PP و سیستم آبخوری نیپل ۴ سوزنه در هر ...",
     "fullDescription": "سیستم قفس تمام اتوماتیک پرورش پولت تخمگذار از جنس گالوانیزه با رنگ الکترواستاتیک، نوار کودکش PP و سیستم آبخوری نیپل ۴ سوزنه در هر سلول.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-070.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-070.webp"
     ],
     "advantages": [
       "استفاده بهینه از فضای سالن و افزایش ظرفیت پرورش",
@@ -3024,9 +3024,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "پکیج جامع سیستم‌های تهویه تونلی و عرضی مرغداری شامل هواکش‌های صنعتی ۱۴۰×۱۴۰ با دمپر گریز از مرکز و ۵۰٪ کاهش مصرف برق.",
     "fullDescription": "پکیج جامع سیستم‌های تهویه تونلی و عرضی مرغداری شامل هواکش‌های صنعتی ۱۴۰×۱۴۰ با دمپر گریز از مرکز و ۵۰٪ کاهش مصرف برق.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-071.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-071.webp"
     ],
     "advantages": [
       "پروانه‌های استیل مرغوب با حداکثر پرتاب و تخلیه هوا",
@@ -3063,9 +3063,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "دستگاه هیت میکسر (ایرمیکسر) جهت انتقال هوای گرم محبوس‌شده در زیر سقف به سطح بستر جوجه با چرخش ۳۶۰ درجه و سنسور اختلاف دمای هوشمند.",
     "fullDescription": "دستگاه هیت میکسر (ایرمیکسر) جهت انتقال هوای گرم محبوس‌شده در زیر سقف به سطح بستر جوجه با چرخش ۳۶۰ درجه و سنسور اختلاف دمای هوشمند.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-072.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-072.webp"
     ],
     "advantages": [
       "کاهش چشمگیر مصرف سوخت با بازچرخانی گرمای زیر سقف",
@@ -3106,9 +3106,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "فن آکسیال ۳۵ سانتی‌متری زیلابگ مدل FTP4E-350 با دبی ۱۳۳۶ CFM، توان ۱۴۰ وات، صدای کم و ساختار جمع‌وجور برای تهویه فضاهای جانبی.",
     "fullDescription": "فن آکسیال ۳۵ سانتی‌متری زیلابگ مدل FTP4E-350 با دبی ۱۳۳۶ CFM، توان ۱۴۰ وات، صدای کم و ساختار جمع‌وجور برای تهویه فضاهای جانبی.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-073.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-073.webp"
     ],
     "advantages": [
       "صدای فوق‌العاده پایین و کارکرد نرم",
@@ -3152,9 +3152,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "فن سیرکوله ۵۰ سانتی‌متری با پروانه ۷ پره زیلابگ، دبی ۶۸۰۰ مترمکعب و توان ۳۶۰ وات جهت یکنواخت‌سازی دما و رطوبت در سالن‌های طویل مرغ...",
     "fullDescription": "فن سیرکوله ۵۰ سانتی‌متری با پروانه ۷ پره زیلابگ، دبی ۶۸۰۰ مترمکعب و توان ۳۶۰ وات جهت یکنواخت‌سازی دما و رطوبت در سالن‌های طویل مرغداری و گلخانه.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-074.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-074.webp"
     ],
     "advantages": [
       "پروانه ۷ پره زیلابگ با عملکرد کاملاً بدون لرزش",
@@ -3199,9 +3199,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "فن کانالی آکسیال ۵۰ سانتی‌متری زیلابگ مدل FTP4E-500 با دبی ۷۱۵۵ مترمکعب بر ساعت و نویز صوتی پایین ۷۱ دسی‌بل.",
     "fullDescription": "فن کانالی آکسیال ۵۰ سانتی‌متری زیلابگ مدل FTP4E-500 با دبی ۷۱۵۵ مترمکعب بر ساعت و نویز صوتی پایین ۷۱ دسی‌بل.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-075.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-075.webp"
     ],
     "advantages": [
       "هوادهی قدرتمند ۷۱۵۵ مترمکعب بر ساعت",
@@ -3241,9 +3241,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "فن سیرکوله ۴۰ سانتی‌متری با بدنه استیل ضد زنگ و پروانه ۷ پره زیلابگ با ظرفیت هوادهی ۳۵۰۰ مترمکعب و توان ۱۷۵ وات.",
     "fullDescription": "فن سیرکوله ۴۰ سانتی‌متری با بدنه استیل ضد زنگ و پروانه ۷ پره زیلابگ با ظرفیت هوادهی ۳۵۰۰ مترمکعب و توان ۱۷۵ وات.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-076.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-076.webp"
     ],
     "advantages": [
       "بدنه تمام استیل مقاوم به رطوبت بالا و گاز آمونیاک",
@@ -3283,9 +3283,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "فن آکسیال ۴۰ سانتی‌متری زیلابگ تک‌فاز با هوادهی ۳۹۵۵ مترمکعب در ساعت و توان ۱۸۰ وات مناسب تهویه کارگاه‌ها، گلخانه‌ها و سالن‌ها.",
     "fullDescription": "فن آکسیال ۴۰ سانتی‌متری زیلابگ تک‌فاز با هوادهی ۳۹۵۵ مترمکعب در ساعت و توان ۱۸۰ وات مناسب تهویه کارگاه‌ها، گلخانه‌ها و سالن‌ها.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-077.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-077.webp"
     ],
     "advantages": [
       "راندمان بالا و ابعاد جمع‌وجور",
@@ -3325,9 +3325,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "فن آکسیال ۴۰ سانتی‌متری سه‌فاز زیلابگ با ولتاژ ۳۸۰ ولت، فرکانس ۵۰ هرتز و توان ۱۸۰ وات برای کاربری‌های صنعتی ممتد.",
     "fullDescription": "فن آکسیال ۴۰ سانتی‌متری سه‌فاز زیلابگ با ولتاژ ۳۸۰ ولت، فرکانس ۵۰ هرتز و توان ۱۸۰ وات برای کاربری‌های صنعتی ممتد.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-078.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-078.webp"
     ],
     "advantages": [
       "موتور سه‌فاز صنعتی پردوام",
@@ -3367,9 +3367,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "فن آکسیال ۶۰ سانتی‌متری سه‌فاز با دبی ۱۱٬۰۰۰ مترمکعب در ساعت، سرعت ۱۳۶۰ دور و نویز بسیار پایین ۷۴ دسی‌بل.",
     "fullDescription": "فن آکسیال ۶۰ سانتی‌متری سه‌فاز با دبی ۱۱٬۰۰۰ مترمکعب در ساعت، سرعت ۱۳۶۰ دور و نویز بسیار پایین ۷۴ دسی‌بل.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-079.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-079.webp"
     ],
     "advantages": [
       "هوادهی بالای ۱۱۰۰۰ مترمکعب بر ساعت",
@@ -3413,9 +3413,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "فن سیرکوله ۶۰ سانتی‌متری بدنه استیل با ۷ پره، دبی ۱۰۸۲۰ مترمکعب در ساعت و توان ۷۸۰ وات برای گردش هوای سالن‌های بزرگ مرغداری و گلخا...",
     "fullDescription": "فن سیرکوله ۶۰ سانتی‌متری بدنه استیل با ۷ پره، دبی ۱۰۸۲۰ مترمکعب در ساعت و توان ۷۸۰ وات برای گردش هوای سالن‌های بزرگ مرغداری و گلخانه.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-080.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-080.webp"
     ],
     "advantages": [
       "هوادهی بالای ۱۰۸۲۰ مترمکعب",
@@ -3459,9 +3459,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "نورگیر و بادگیر مخصوص هواکش‌های صنعتی ۱۴۰ با بالک‌های سینوسی بدون افت دبی هوای خروجی جهت ایجاد تاریکی در سالن‌های تخمگذار و مادر.",
     "fullDescription": "نورگیر و بادگیر مخصوص هواکش‌های صنعتی ۱۴۰ با بالک‌های سینوسی بدون افت دبی هوای خروجی جهت ایجاد تاریکی در سالن‌های تخمگذار و مادر.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-081.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-081.webp"
     ],
     "advantages": [
       "جلوگیری کامل از ورود نور به سالن",
@@ -3493,9 +3493,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "هواکش ۱۴۰ صنعتی سه پره استیل مدل NTA3140 با توان ۱.۱ کیلووات، هوادهی ۴۴۱۰۰ مترمکعب و هوزینگ پلی‌پروپیلن سبک و مقاوم در برابر آمونی...",
     "fullDescription": "هواکش ۱۴۰ صنعتی سه پره استیل مدل NTA3140 با توان ۱.۱ کیلووات، هوادهی ۴۴۱۰۰ مترمکعب و هوزینگ پلی‌پروپیلن سبک و مقاوم در برابر آمونیاک.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-082.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-082.webp"
     ],
     "advantages": [
       "هوادهی ۴۴۱۰۰ مترمکعب در ساعت با ۳ پره استیل",
@@ -3536,9 +3536,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "هواکش ۱۴۰ پنج پره استیل ۴۳۰ با ماکزیمم هوادهی ۴۴۰۰۰ مترمکعب، صدای کمتر از ۵۰ دسی‌بل، بدون لرزش و دارای تاییدیه آزمایشگاه مرجع فن ا...",
     "fullDescription": "هواکش ۱۴۰ پنج پره استیل ۴۳۰ با ماکزیمم هوادهی ۴۴۰۰۰ مترمکعب، صدای کمتر از ۵۰ دسی‌بل، بدون لرزش و دارای تاییدیه آزمایشگاه مرجع فن ایران.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-083.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-083.webp"
     ],
     "advantages": [
       "صدای فوق‌العاده کم (کمتر از ۵۰ دسی‌بل)",
@@ -3579,9 +3579,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "هواکش ۱۰۰ پنج پره پلیمری PPG با پروانه پلی‌پروپیلن الیاف‌دار، موتور ۰.۵۵ کیلووات ۹۰۰ دور الکتروژن و صدای فوق‌العاده پایین.",
     "fullDescription": "هواکش ۱۰۰ پنج پره پلیمری PPG با پروانه پلی‌پروپیلن الیاف‌دار، موتور ۰.۵۵ کیلووات ۹۰۰ دور الکتروژن و صدای فوق‌العاده پایین.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-084.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-084.webp"
     ],
     "advantages": [
       "پروانه سبک پلی‌پروپیلن الیاف‌دار نشکن",
@@ -3617,9 +3617,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "هواکش صنعتی ۱۴۰ سانت شش پره مدل NTA6140 با قدرت تخلیه ۴۵۳۸۰ مترمکعب بر ساعت، پروانه استیل ضدزنگ و فولی V شکل دایکست آلومینیومی.",
     "fullDescription": "هواکش صنعتی ۱۴۰ سانت شش پره مدل NTA6140 با قدرت تخلیه ۴۵۳۸۰ مترمکعب بر ساعت، پروانه استیل ضدزنگ و فولی V شکل دایکست آلومینیومی.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-085.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-085.webp"
     ],
     "advantages": [
       "بالاترین دبی تخلیه: ۴۵۳۸۰ مترمکعب بر ساعت",
@@ -3660,9 +3660,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "هواکش شش پره ۱۰۰ صنعتی مدل NTA6100 با هوادهی ۱۸۷۰۰ مترمکعب و نشان استاندارد ملی ایران، پروانه استیل و دمپر اتومات گریز از مرکز.",
     "fullDescription": "هواکش شش پره ۱۰۰ صنعتی مدل NTA6100 با هوادهی ۱۸۷۰۰ مترمکعب و نشان استاندارد ملی ایران، پروانه استیل و دمپر اتومات گریز از مرکز.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-086.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-086.webp"
     ],
     "advantages": [
       "هوادهی ۱۸۷۰۰ مترمکعب بر ساعت",
@@ -3703,9 +3703,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "هواکش ۱۴۰ طرح بیگ هردزمن ایرانی با موتور ۱.۵ اسب، ۶ پره استیل، دمپر کلاچ‌دار و خروجی هوای ۴۴٬۰۰۰ مترمکعب با قابلیت دو دور تند و کن...",
     "fullDescription": "هواکش ۱۴۰ طرح بیگ هردزمن ایرانی با موتور ۱.۵ اسب، ۶ پره استیل، دمپر کلاچ‌دار و خروجی هوای ۴۴٬۰۰۰ مترمکعب با قابلیت دو دور تند و کند.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-087.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-087.webp"
     ],
     "advantages": [
       "موتور ۱.۵ اسب بخار با دو دور تند و کند",
@@ -3742,9 +3742,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "کاسه کاپ نیپل دو پایه ساخته شده از کوپلیمر درجه یک، با مقاومت بالا در برابر شکستگی جهت جمع‌آوری قطرات آب زیر سوزن نیپل.",
     "fullDescription": "کاسه کاپ نیپل دو پایه ساخته شده از کوپلیمر درجه یک، با مقاومت بالا در برابر شکستگی جهت جمع‌آوری قطرات آب زیر سوزن نیپل.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-088.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-088.webp"
     ],
     "advantages": [
       "مقاومت عالی در برابر شکستگی و تغییر شکل",
@@ -3781,9 +3781,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "کاسه کاپ نیپل تک‌پایه با کیفیت بالا و رنگ جذاب برای جلب توجه طیور و دسترسی آسان به آب تازه بدون خیس شدن بستر.",
     "fullDescription": "کاسه کاپ نیپل تک‌پایه با کیفیت بالا و رنگ جذاب برای جلب توجه طیور و دسترسی آسان به آب تازه بدون خیس شدن بستر.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-089.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-089.webp"
     ],
     "advantages": [
       "رنگ زرد/قرمز جذاب برای جذب پرنده",
@@ -3815,9 +3815,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "بشقاب دانخوری چیکن مهندسی معکوس شرکت FIT آلمان با لبه ۴۵ میلی‌متری، امکان تغذیه همزمان ۱۸ سر مرغ از روز اول بدون ورود به بشقاب.",
     "fullDescription": "بشقاب دانخوری چیکن مهندسی معکوس شرکت FIT آلمان با لبه ۴۵ میلی‌متری، امکان تغذیه همزمان ۱۸ سر مرغ از روز اول بدون ورود به بشقاب.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-090.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-090.webp"
     ],
     "advantages": [
       "استفاده همزمان ۱۸ سر مرغ از یک بشقاب",
@@ -3858,9 +3858,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "بشقاب دانخوری کوناوی مهندسی معکوس شرکت Chore-Time آمریکا با توری زاویه‌دار منحنی و کفی زائده‌دار جهت به حداقل رساندن پرت دان از سن...",
     "fullDescription": "بشقاب دانخوری کوناوی مهندسی معکوس شرکت Chore-Time آمریکا با توری زاویه‌دار منحنی و کفی زائده‌دار جهت به حداقل رساندن پرت دان از سن یک‌روزگی.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-091.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-091.webp"
     ],
     "advantages": [
       "حداقل پرت دان به واسطه گریل زاویه‌دار منحنی",
@@ -3897,9 +3897,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "آبخوری کله‌قندی دستی استاندارد جهت آموزش و دسترسی آسان جوجه‌ها به آب در روزهای اولیه پرورش در کنار خطوط نیپل.",
     "fullDescription": "آبخوری کله‌قندی دستی استاندارد جهت آموزش و دسترسی آسان جوجه‌ها به آب در روزهای اولیه پرورش در کنار خطوط نیپل.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-092.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-092.webp"
     ],
     "advantages": [
       "تضمین آبرسانی به جوجه‌های تازه‌متولدشده در روزهای ۱ تا ۳",
@@ -3931,9 +3931,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "کرپی چدنی ۳ آبخوری با استحکام بالا جهت مهار و بستن سیم بکسل‌های خطوط آبخوری و دانخوری سالن.",
     "fullDescription": "کرپی چدنی ۳ آبخوری با استحکام بالا جهت مهار و بستن سیم بکسل‌های خطوط آبخوری و دانخوری سالن.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-093.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-093.webp"
     ],
     "advantages": [
       "جنس چدن نشکن با مقاومت کششی بالا",
@@ -3969,9 +3969,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "کرپی جوش آبخوری با سطح مقطع جوشکاری مناسب جهت اتصال مستحکم قرقره‌ها و سیم بکسل به سازه سقف سالن.",
     "fullDescription": "کرپی جوش آبخوری با سطح مقطع جوشکاری مناسب جهت اتصال مستحکم قرقره‌ها و سیم بکسل به سازه سقف سالن.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-094.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-094.webp"
     ],
     "advantages": [
       "سطح مقطع جوشکاری بالا و اتصال محکم",
@@ -4003,9 +4003,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "قرقره پلاستیکی صنعتی با قلاب فولادی قوی و ضدسایش جهت هدایت روان سیم بکسل و ایستایی تراز خطوط آبخوری و دانخوری.",
     "fullDescription": "قرقره پلاستیکی صنعتی با قلاب فولادی قوی و ضدسایش جهت هدایت روان سیم بکسل و ایستایی تراز خطوط آبخوری و دانخوری.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-095.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-095.webp"
     ],
     "advantages": [
       "قلاب فولادی بسیار محکم و نشکن",
@@ -4042,9 +4042,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "بست رابط فلزی گالوانیزه بین لوله آبخوری چهارگوش و لوله مهار ساپورتر جهت تثبیت و جلوگیری از چرخش و تاب‌خوردگی خطوط نیپل.",
     "fullDescription": "بست رابط فلزی گالوانیزه بین لوله آبخوری چهارگوش و لوله مهار ساپورتر جهت تثبیت و جلوگیری از چرخش و تاب‌خوردگی خطوط نیپل.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-096.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-096.webp"
     ],
     "advantages": [
       "گالوانیزه درجه یک مقاوم به زنگ‌زدگی",
@@ -4076,9 +4076,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "فنر کششی شوکر آبخوری جهت سفت نگه‌داشتن سیم شوکر برق‌دار بالای خط نیپل برای جلوگیری از نشستن پرندگان روی خطوط.",
     "fullDescription": "فنر کششی شوکر آبخوری جهت سفت نگه‌داشتن سیم شوکر برق‌دار بالای خط نیپل برای جلوگیری از نشستن پرندگان روی خطوط.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-097.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-097.webp"
     ],
     "advantages": [
       "کاهش استهلاک و جلوگیری از خم شدن لوله‌های نیپل",
@@ -4110,9 +4110,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "رگلاتور فشارشکن خط نیپل با پیچ تنظیم، شلنگ نشانگر سطح آب و شیر شستشوی سریع جهت تثبیت فشار آب در طول خطوط مرغداری.",
     "fullDescription": "رگلاتور فشارشکن خط نیپل با پیچ تنظیم، شلنگ نشانگر سطح آب و شیر شستشوی سریع جهت تثبیت فشار آب در طول خطوط مرغداری.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-098.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-098.webp"
     ],
     "advantages": [
       "حفظ فشار ثابت و یکنواخت آب در سرتاسر خط",
@@ -4149,9 +4149,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "رگلاتور فشارشکن آبخوری نیپل ساخت ترکیه با دیافراگم سیلیکونی باکیفیت و کنترل دقیق دبی آب برای خطوط تا ۱۲۰ متر طول.",
     "fullDescription": "رگلاتور فشارشکن آبخوری نیپل ساخت ترکیه با دیافراگم سیلیکونی باکیفیت و کنترل دقیق دبی آب برای خطوط تا ۱۲۰ متر طول.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-099.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-099.webp"
     ],
     "advantages": [
       "دقت بالای تنظیم فشار متناسب با سن جوجه",
@@ -4188,9 +4188,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "فشارشکن آبخوری ایرانی مدل بهینه‌شده با آب‌بندی مطمئن و شیر فلاشینگ خط جهت شستشوی سریع لوله‌های نیپل پس از واکسیناسیون.",
     "fullDescription": "فشارشکن آبخوری ایرانی مدل بهینه‌شده با آب‌بندی مطمئن و شیر فلاشینگ خط جهت شستشوی سریع لوله‌های نیپل پس از واکسیناسیون.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-100.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-100.webp"
     ],
     "advantages": [
       "صرفه‌جویی در مصرف آب و دارو",
@@ -4222,9 +4222,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "بست رابط انعطاف‌پذیر PVC به همراه بست‌های فلزی گازی جهت اتصال آب‌بند و مطمئن شاخه‌های ۴ متری لوله نیپل چهارگوش به یکدیگر.",
     "fullDescription": "بست رابط انعطاف‌پذیر PVC به همراه بست‌های فلزی گازی جهت اتصال آب‌بند و مطمئن شاخه‌های ۴ متری لوله نیپل چهارگوش به یکدیگر.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-101.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-101.webp"
     ],
     "advantages": [
       "جنس PVC منعطف ضد شکستگی و ترک",
@@ -4256,9 +4256,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "بست کوپلینگ گالوانیزه مجهز به ۳ عدد پیچ و مهره جهت اتصال و امتداد لوله‌های مهار ساپورتر خطوط آبخوری در طول سالن.",
     "fullDescription": "بست کوپلینگ گالوانیزه مجهز به ۳ عدد پیچ و مهره جهت اتصال و امتداد لوله‌های مهار ساپورتر خطوط آبخوری در طول سالن.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-102.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-102.webp"
     ],
     "advantages": [
       "ورق گالوانیزه مقاوم با ۳ پیچ فولادی محکم",
@@ -4290,9 +4290,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "سوزن نیپل گوشتی ۳۶۰ درجه ساخت ترکیه با بدنه پلیمری رنگی جذاب و سوزن استنلس استیل داخلی با آبدهی روان و حساس به کمترین ضربه نوک پرن...",
     "fullDescription": "سوزن نیپل گوشتی ۳۶۰ درجه ساخت ترکیه با بدنه پلیمری رنگی جذاب و سوزن استنلس استیل داخلی با آبدهی روان و حساس به کمترین ضربه نوک پرنده.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-103.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-103.webp"
     ],
     "advantages": [
       "چرخش و آبدهی ۳۶۰ درجه از تمام جهات",
@@ -4333,9 +4333,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "سوزن نیپل تمام استیل ۳۶۰ درجه ساخت ترکیه با طول عمر فوق‌العاده بالا، مقاوم در برابر اسیدهای شستشو و آب‌های با سختی بالا.",
     "fullDescription": "سوزن نیپل تمام استیل ۳۶۰ درجه ساخت ترکیه با طول عمر فوق‌العاده بالا، مقاوم در برابر اسیدهای شستشو و آب‌های با سختی بالا.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-104.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-104.webp"
     ],
     "advantages": [
       "بدنه و سوزن تمام استنلس استیل ضدزنگ",
@@ -4376,9 +4376,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "لوله مهار گالوانیزه صنعتی به صورت شاخه‌های ۴ متری جهت مهار و تثبیت خطوط آبخوری و جلوگیری از نوسان و ضربات پرنده.",
     "fullDescription": "لوله مهار گالوانیزه صنعتی به صورت شاخه‌های ۴ متری جهت مهار و تثبیت خطوط آبخوری و جلوگیری از نوسان و ضربات پرنده.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-105.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-105.webp"
     ],
     "advantages": [
       "گالوانیزه درجه یک مقاوم به آمونیاک و رطوبت سالن",
@@ -4414,9 +4414,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "سوزن نیپل ۱۸۰ درجه مخصوص سالن‌های مرغ تخمگذار، پولت، کبک و بلدرچین با کنترل دقیق خروجی آب و ممانعت از ریزش آب به کود.",
     "fullDescription": "سوزن نیپل ۱۸۰ درجه مخصوص سالن‌های مرغ تخمگذار، پولت، کبک و بلدرچین با کنترل دقیق خروجی آب و ممانعت از ریزش آب به کود.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-106.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-106.webp"
     ],
     "advantages": [
       "عملکرد ۱۸۰ درجه بالا و پایین متناسب با قفس تخمگذار",
@@ -4456,9 +4456,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "شاخه ۴ متری لوله PVC مرغوب گرد آبخوری نیپل، آماده سوراخ‌کاری دقیق در فواصل ۲۵ و ۳۳ سانتی‌متری جهت نصب نیپل با کمربند.",
     "fullDescription": "شاخه ۴ متری لوله PVC مرغوب گرد آبخوری نیپل، آماده سوراخ‌کاری دقیق در فواصل ۲۵ و ۳۳ سانتی‌متری جهت نصب نیپل با کمربند.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-107.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-107.webp"
     ],
     "advantages": [
       "PVC درجه یک با جداره داخلی صاف و ضد رسوب",
@@ -4494,9 +4494,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "سیستم مه‌پاش نازلی فشار قوی ۱۱۰ تا ۲۲۰ بار با پمپ برتو ایتالیا، نازل‌های استیل/سرامیکی و شلنگ‌های ۴ لایه سیم‌دار جهت خنک‌سازی و تا...",
     "fullDescription": "سیستم مه‌پاش نازلی فشار قوی ۱۱۰ تا ۲۲۰ بار با پمپ برتو ایتالیا، نازل‌های استیل/سرامیکی و شلنگ‌های ۴ لایه سیم‌دار جهت خنک‌سازی و تامین رطوبت سالن.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-108.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-108.webp"
     ],
     "advantages": [
       "کاهش محسوس دمای سالن بدون ایجاد خیسی بستر",
@@ -4541,9 +4541,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "سیلوهای ذخیره دان پیچ و مهره‌ای گالوانیزه کرکره‌ای در ظرفیت‌های ۲.۵ تا ۳۰ تن (و سفارشی تا ۱۰۰ تن) به همراه نردبان حفاظ‌دار و خطوط ...",
     "fullDescription": "سیلوهای ذخیره دان پیچ و مهره‌ای گالوانیزه کرکره‌ای در ظرفیت‌های ۲.۵ تا ۳۰ تن (و سفارشی تا ۱۰۰ تن) به همراه نردبان حفاظ‌دار و خطوط انتقال اوگر.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-109.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-109.webp"
     ],
     "advantages": [
       "بدنه گالوانیزه کرکره‌ای ضدآب و مقاوم در برابر شرایط جوی",
@@ -4584,9 +4584,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "خط کامل آبخوری نیپل تمام استیل با چرخش ۳۶۰ درجه، لوله‌های UPVC چهارگوش یا گرد و کاسه نیپل‌های تک‌پایه/دوپایه با بهداشت کامل.",
     "fullDescription": "خط کامل آبخوری نیپل تمام استیل با چرخش ۳۶۰ درجه، لوله‌های UPVC چهارگوش یا گرد و کاسه نیپل‌های تک‌پایه/دوپایه با بهداشت کامل.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-110.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-110.webp"
     ],
     "advantages": [
       "بهداشتی‌ترین سیستم آبرسانی طیور با صفر درصد هدررفت آب و دارو",
@@ -4627,9 +4627,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "پنجره اینلت کارنو سایز ۳۰×۶۰ با بدنه پلی‌استایرن HIPS، دمپر دوجداره تزریق فوم، فنر مخفی و دمپر ناودانی برای تهویه زمستانی ایده‌آل.",
     "fullDescription": "پنجره اینلت کارنو سایز ۳۰×۶۰ با بدنه پلی‌استایرن HIPS، دمپر دوجداره تزریق فوم، فنر مخفی و دمپر ناودانی برای تهویه زمستانی ایده‌آل.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-111.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-111.webp"
     ],
     "advantages": [
       "هدایت خطی و منظم جریان هوای سرد به زیر سقف",
@@ -4666,9 +4666,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": false,
     "shortDescription": "لوله نیپل چهارگوش پله‌ای ۴ متری از جنس UPVC سنگین مهراس کویر با مقاومت در برابر فشار و آماده نصب مستقیم سوزن‌های رزوه یا بندکی.",
     "fullDescription": "لوله نیپل چهارگوش پله‌ای ۴ متری از جنس UPVC سنگین مهراس کویر با مقاومت در برابر فشار و آماده نصب مستقیم سوزن‌های رزوه یا بندکی.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-112.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-112.webp"
     ],
     "advantages": [
       "ساخته شده از UPVC درجه یک سنگین بدون تابیدگی",
@@ -4704,9 +4704,9 @@ export const PRODUCTS: Product[] = [
     "isIndustrialMachine": true,
     "shortDescription": "سیستم آشیانه و لانه تخمگذاری تمام اتوماتیک مرغ مادر و بستر با نوار تخم‌مرغ PP با قابلیت تنظیم سرعت، اسلت‌های پلاستیکی و نصب بدون ج...",
     "fullDescription": "سیستم آشیانه و لانه تخمگذاری تمام اتوماتیک مرغ مادر و بستر با نوار تخم‌مرغ PP با قابلیت تنظیم سرعت، اسلت‌های پلاستیکی و نصب بدون جوشکاری.",
-    "image": "/images/product-placeholder.svg",
+    "image": "/images/products/KT-113.webp",
     "gallery": [
-      "/images/product-placeholder.svg"
+      "/images/products/KT-113.webp"
     ],
     "advantages": [
       "کاهش چشمگیر درصد تخم‌مرغ‌های شکسته و کثیف",

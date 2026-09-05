@@ -98,8 +98,8 @@ interface DataContextType {
   // Authentication
   adminUser: AdminUser | null;
   isAuthenticated: boolean;
-  login: (username: string, password: string) => Promise<{ success: boolean; error?: string }>;
-  setupPassword: (password: string) => Promise<{ success: boolean; error?: string }>;
+  login: (username: string, password: string, turnstileToken?: string) => Promise<{ success: boolean; mfaRequired?: boolean; error?: string }>;
+  verifyMfa: (token: string) => Promise<{ success: boolean; error?: string }>;
   hasAdminPassword: boolean;
   logout: () => void;
   changePassword: (oldPassword: string, newPassword: string) => { success: boolean; error?: string };
@@ -131,185 +131,81 @@ const STORAGE_KEYS = {
 
 export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // Initialize from LocalStorage or Defaults
-  const [products, setProducts] = useState<Product[]>(() => {
-    const saved = localStorage.getItem(STORAGE_KEYS.PRODUCTS);
-    return saved ? JSON.parse(saved) : PRODUCTS;
-  });
+  const [products, setProducts] = useState<Product[]>(PRODUCTS);
 
-  const [projects, setProjects] = useState<Project[]>(() => {
-    const saved = localStorage.getItem(STORAGE_KEYS.PROJECTS);
-    return saved ? JSON.parse(saved) : PROJECTS;
-  });
+  const [projects, setProjects] = useState<Project[]>(PROJECTS);
 
-  const [services, setServices] = useState<Service[]>(() => {
-    const saved = localStorage.getItem(STORAGE_KEYS.SERVICES);
-    return saved ? JSON.parse(saved) : SERVICES;
-  });
+  const [services, setServices] = useState<Service[]>(SERVICES);
 
-  const [articles, setArticles] = useState<Article[]>(() => {
-    const saved = localStorage.getItem(STORAGE_KEYS.ARTICLES);
-    const version = localStorage.getItem('ARTICLES_VERSION_3');
-    
-    if (saved && version) {
-      return JSON.parse(saved);
-    }
-    
-    // Force update local storage with the new rich articles
-    localStorage.setItem(STORAGE_KEYS.ARTICLES, JSON.stringify(ARTICLES));
-    localStorage.setItem('ARTICLES_VERSION_3', 'true');
-    return ARTICLES;
-  });
+  const [articles, setArticles] = useState<Article[]>(ARTICLES);
 
-  const [categories, setCategories] = useState<CategoryItem[]>(() => {
-    const saved = localStorage.getItem(STORAGE_KEYS.CATEGORIES);
-    return saved ? JSON.parse(saved) : (CATEGORIES_DATA as CategoryItem[]);
-  });
+  const [categories, setCategories] = useState<CategoryItem[]>(CATEGORIES_DATA as CategoryItem[]);
 
-  const [companyInfo, setCompanyInfo] = useState<CompanyInfo>(() => {
-    const saved = localStorage.getItem(STORAGE_KEYS.COMPANY_INFO);
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      return {
-        ...COMPANY_INFO,
-        ...parsed,
-        socialLinks: { ...COMPANY_INFO.socialLinks, ...(parsed.socialLinks || {}) },
-        locations: parsed.locations && parsed.locations.length > 0 ? parsed.locations : COMPANY_INFO.locations
-      } as CompanyInfo;
-    }
-    return COMPANY_INFO as CompanyInfo;
-  });
+  const [companyInfo, setCompanyInfo] = useState<CompanyInfo>(COMPANY_INFO as CompanyInfo);
 
-  const [heroCms, setHeroCms] = useState<HeroCmsContent>(() => {
-    const saved = localStorage.getItem(STORAGE_KEYS.HERO_CMS);
-    return saved ? JSON.parse(saved) : DEFAULT_HERO_CMS;
-  });
+  const [heroCms, setHeroCms] = useState<HeroCmsContent>(DEFAULT_HERO_CMS);
 
-  const [aiConfig, setAiConfig] = useState<AiAdvisorConfig>(() => {
-    const saved = localStorage.getItem(STORAGE_KEYS.AI_CONFIG);
-    return saved ? JSON.parse(saved) : DEFAULT_AI_CONFIG;
-  });
+  const [aiConfig, setAiConfig] = useState<AiAdvisorConfig>(DEFAULT_AI_CONFIG);
 
-  const [quoteRequests, setQuoteRequests] = useState<QuoteRequestItem[]>(() => {
-    const saved = localStorage.getItem(STORAGE_KEYS.QUOTES);
-    return saved ? JSON.parse(saved) : INITIAL_QUOTES;
-  });
+  const [quoteRequests, setQuoteRequests] = useState<QuoteRequestItem[]>(INITIAL_QUOTES);
 
-  const [consultationRequests, setConsultationRequests] = useState<ConsultationRequestItem[]>(() => {
-    const saved = localStorage.getItem(STORAGE_KEYS.CONSULTATIONS);
-    return saved ? JSON.parse(saved) : INITIAL_CONSULTATIONS;
-  });
+  const [consultationRequests, setConsultationRequests] = useState<ConsultationRequestItem[]>(INITIAL_CONSULTATIONS);
 
-  
-  const [customers, setCustomers] = useState<CustomerContact[]>(() => {
-    const saved = localStorage.getItem(STORAGE_KEYS.CUSTOMERS);
-    return saved ? JSON.parse(saved) : [];
-  });
+  const [customers, setCustomers] = useState<CustomerContact[]>([]);
+  const [mediaLibrary, setMediaLibrary] = useState<MediaItem[]>(INITIAL_MEDIA);
 
-  const [mediaLibrary, setMediaLibrary] = useState<MediaItem[]>(() => {
-    const saved = localStorage.getItem(STORAGE_KEYS.MEDIA);
-    const version = localStorage.getItem('MEDIA_VERSION_1');
-    if (saved && version) {
-      return JSON.parse(saved);
-    }
-    
-    // Merge existing media with initial media if upgrading
-    const parsed = saved ? JSON.parse(saved) : [];
-    const merged = [...INITIAL_MEDIA];
-    
-    for (const item of parsed) {
-      if (!merged.find(m => m.id === item.id)) {
-        merged.push(item);
-      }
-    }
-    
-    localStorage.setItem(STORAGE_KEYS.MEDIA, JSON.stringify(merged));
-    localStorage.setItem('MEDIA_VERSION_1', 'true');
-    return merged;
-  });
+  const addCustomer = (customer: CustomerContact) => setCustomers(prev => [customer, ...prev]);
+  const updateCustomer = (id: string, updates: Partial<CustomerContact>) => setCustomers(prev => prev.map(c => c.id === id ? { ...c, ...updates } : c));
+  const deleteCustomer = (id: string) => setCustomers(prev => prev.filter(c => c.id !== id));
+  const addMedia = (media: MediaItem) => setMediaLibrary(prev => [media, ...prev]);
+  const deleteMedia = (id: string) => setMediaLibrary(prev => prev.filter(m => m.id !== id));
 
+  const [adminUser, setAdminUser] = useState<AdminUser | null>(null);
+  const [hasAdminPassword] = useState(true);
+
+  const [adminDataReady, setAdminDataReady] = useState(false);
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEYS.CUSTOMERS, JSON.stringify(customers));
-  }, [customers]);
-
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEYS.MEDIA, JSON.stringify(mediaLibrary));
-  }, [mediaLibrary]);
-
-  const addCustomer = (customer: CustomerContact) => {
-    setCustomers(prev => [customer, ...prev]);
+    fetch('/api/auth/me', { credentials: 'include' })
+      .then(response => response.ok ? response.json() : null)
+      .then(result => { if (result?.admin) setAdminUser({ username: result.admin.username, displayName: 'مدیریت کل سیستم', role: 'superadmin' }); })
+      .catch(() => undefined);
+  }, []);
+  const saveAdminState = (key: string, value: unknown) => {
+    if (adminUser && adminDataReady) void fetch(`/api/admin/state/${key}`, { method: 'PUT', credentials: 'include', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ value }) });
   };
-  const updateCustomer = (id: string, updates: Partial<CustomerContact>) => {
-    setCustomers(prev => prev.map(c => c.id === id ? { ...c, ...updates } : c));
-  };
-  const deleteCustomer = (id: string) => {
-    setCustomers(prev => prev.filter(c => c.id !== id));
-  };
-
-  const addMedia = (media: MediaItem) => {
-    setMediaLibrary(prev => [media, ...prev]);
-  };
-  const deleteMedia = (id: string) => {
-    setMediaLibrary(prev => prev.filter(m => m.id !== id));
-  };
-  
-  const [adminUser, setAdminUser] = useState<AdminUser | null>(() => {
-    const saved = sessionStorage.getItem(STORAGE_KEYS.ADMIN_USER);
-    return saved ? JSON.parse(saved) : null;
-  });
-  const [hasAdminPassword, setHasAdminPassword] = useState(() => {
-    const stored = localStorage.getItem(STORAGE_KEYS.ADMIN_PASSWORD);
-    return Boolean(stored && stored.startsWith('sha256:'));
-  });
-
-  // Sync to localStorage
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEYS.PRODUCTS, JSON.stringify(products));
-  }, [products]);
-
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEYS.PROJECTS, JSON.stringify(projects));
-  }, [projects]);
-
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEYS.SERVICES, JSON.stringify(services));
-  }, [services]);
-
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEYS.ARTICLES, JSON.stringify(articles));
-  }, [articles]);
-
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEYS.CATEGORIES, JSON.stringify(categories));
-  }, [categories]);
-
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEYS.COMPANY_INFO, JSON.stringify(companyInfo));
-  }, [companyInfo]);
-
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEYS.HERO_CMS, JSON.stringify(heroCms));
-  }, [heroCms]);
-
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEYS.AI_CONFIG, JSON.stringify(aiConfig));
-  }, [aiConfig]);
-
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEYS.QUOTES, JSON.stringify(quoteRequests));
-  }, [quoteRequests]);
-
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEYS.CONSULTATIONS, JSON.stringify(consultationRequests));
-  }, [consultationRequests]);
-
-  useEffect(() => {
-    if (adminUser) {
-      sessionStorage.setItem(STORAGE_KEYS.ADMIN_USER, JSON.stringify(adminUser));
-    } else {
-      sessionStorage.removeItem(STORAGE_KEYS.ADMIN_USER);
-    }
+    if (!adminUser) { setAdminDataReady(false); return; }
+    const keys = ['products', 'projects', 'services', 'articles', 'categories', 'companyInfo', 'heroCms', 'aiConfig', 'quotes', 'consultations', 'customers', 'media'];
+    Promise.all(keys.map(async key => [key, await fetch(`/api/admin/state/${key}`, { credentials: 'include' }).then(response => response.ok ? response.json() : { value: null })] as const))
+      .then(entries => {
+        const state = Object.fromEntries(entries);
+        if (state.products.value) setProducts(state.products.value);
+        if (state.projects.value) setProjects(state.projects.value);
+        if (state.services.value) setServices(state.services.value);
+        if (state.articles.value) setArticles(state.articles.value);
+        if (state.categories.value) setCategories(state.categories.value);
+        if (state.companyInfo.value) setCompanyInfo(state.companyInfo.value);
+        if (state.heroCms.value) setHeroCms(state.heroCms.value);
+        if (state.aiConfig.value) setAiConfig(state.aiConfig.value);
+        if (state.quotes.value) setQuoteRequests(state.quotes.value);
+        if (state.consultations.value) setConsultationRequests(state.consultations.value);
+        if (state.customers.value) setCustomers(state.customers.value);
+        if (state.media.value) setMediaLibrary(state.media.value);
+        setAdminDataReady(true);
+      }).catch(() => setAdminDataReady(true));
   }, [adminUser]);
-
+  useEffect(() => { saveAdminState('products', products); }, [products, adminUser, adminDataReady]);
+  useEffect(() => { saveAdminState('projects', projects); }, [projects, adminUser, adminDataReady]);
+  useEffect(() => { saveAdminState('services', services); }, [services, adminUser, adminDataReady]);
+  useEffect(() => { saveAdminState('articles', articles); }, [articles, adminUser, adminDataReady]);
+  useEffect(() => { saveAdminState('categories', categories); }, [categories, adminUser, adminDataReady]);
+  useEffect(() => { saveAdminState('companyInfo', companyInfo); }, [companyInfo, adminUser, adminDataReady]);
+  useEffect(() => { saveAdminState('heroCms', heroCms); }, [heroCms, adminUser, adminDataReady]);
+  useEffect(() => { saveAdminState('aiConfig', aiConfig); }, [aiConfig, adminUser, adminDataReady]);
+  useEffect(() => { saveAdminState('quotes', quoteRequests); }, [quoteRequests, adminUser, adminDataReady]);
+  useEffect(() => { saveAdminState('consultations', consultationRequests); }, [consultationRequests, adminUser, adminDataReady]);
+  useEffect(() => { saveAdminState('customers', customers); }, [customers, adminUser, adminDataReady]);
+  useEffect(() => { saveAdminState('media', mediaLibrary); }, [mediaLibrary, adminUser, adminDataReady]);
   // Product CRUD
   const addProduct = (product: Product) => {
     setProducts(prev => [product, ...prev]);
@@ -448,51 +344,29 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setConsultationRequests(prev => prev.filter(c => c.id !== id));
   };
 
-  // Auth Operations: no default credentials; passwords are never stored in plaintext.
-  const hashPassword = async (password: string) => {
-    const bytes = new TextEncoder().encode(password);
-    const digest = await crypto.subtle.digest('SHA-256', bytes);
-    return `sha256:${Array.from(new Uint8Array(digest)).map(byte => byte.toString(16).padStart(2, '0')).join('')}`;
+  // Authentication is performed by the backend; no password or session token is stored in the browser.
+  const login = async (username: string, password: string, turnstileToken?: string) => {
+    const response = await fetch('/api/auth/login', { method: 'POST', credentials: 'include', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username, password, turnstileToken }) });
+    const result = await response.json();
+    if (response.ok) {
+      if (result.mfaRequired) return { success: false, mfaRequired: true };
+      setAdminUser({ username, displayName: username === 'admin' ? 'مدیریت کل سیستم' : 'مدیر مهندسی و فروش', role: 'superadmin' });
+      return { success: true };
+    }
+    return { success: false, error: result.error || 'ورود ناموفق بود.' };
   };
 
-  const setupPassword = async (password: string) => {
-    const value = password.trim();
-    if (value.length < 12) {
-      return { success: false, error: 'رمز اولیه باید حداقل ۱۲ کاراکتر باشد.' };
-    }
-    localStorage.setItem(STORAGE_KEYS.ADMIN_PASSWORD, await hashPassword(value));
-    setHasAdminPassword(true);
-    return { success: true };
+  const verifyMfa = async (token: string) => {
+    const response = await fetch('/api/auth/mfa/verify', { method: 'POST', credentials: 'include', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token }) });
+    const result = await response.json();
+    if (response.ok) { setAdminUser({ username: 'admin', displayName: 'مدیریت کل سیستم', role: 'superadmin' }); return { success: true }; }
+    return { success: false, error: result.error || 'کد MFA نامعتبر است.' };
   };
 
-  const login = async (username: string, pass: string) => {
-    if (!hasAdminPassword) return { success: false, error: 'برای شروع، یک رمز عبور قوی تعیین کنید.' };
-    const normalizedUser = username.toLowerCase().trim();
-    if (!['admin', 'toyooran', 'manager'].includes(normalizedUser)) {
-      return { success: false, error: 'نام کاربری یا رمز عبور اشتباه است.' };
-    }
-    const lockKey = 'toyooran_admin_login_attempts_v1';
-    const attempts = JSON.parse(localStorage.getItem(lockKey) || '{"count":0,"until":0}');
-    if (attempts.until > Date.now()) return { success: false, error: 'تلاش‌های ورود زیاد است؛ چند دقیقه بعد دوباره امتحان کنید.' };
-    const valid = await hashPassword(pass.trim()) === localStorage.getItem(STORAGE_KEYS.ADMIN_PASSWORD);
-    if (!valid) {
-      const count = attempts.count + 1;
-      localStorage.setItem(lockKey, JSON.stringify(count >= 5 ? { count: 0, until: Date.now() + 5 * 60 * 1000 } : { count, until: 0 }));
-      return { success: false, error: 'نام کاربری یا رمز عبور اشتباه است.' };
-    }
-    localStorage.removeItem(lockKey);
-    setAdminUser({ username: normalizedUser, displayName: normalizedUser === 'admin' ? 'مدیریت کل سیستم' : 'مدیر مهندسی و فروش', role: 'superadmin' });
-    return { success: true };
-  };
+  const logout = () => { void fetch('/api/auth/logout', { method: 'POST', credentials: 'include' }); setAdminUser(null); };
 
-  const logout = () => setAdminUser(null);
-
-  const changePassword = async (oldPassword: string, newPassword: string) => {
-    const value = newPassword.trim();
-    if (await hashPassword(oldPassword.trim()) !== localStorage.getItem(STORAGE_KEYS.ADMIN_PASSWORD)) return { success: false, error: 'رمز عبور فعلی نادرست است.' };
-    if (value.length < 12) return { success: false, error: 'رمز عبور جدید باید حداقل ۱۲ کاراکتر باشد.' };
-    localStorage.setItem(STORAGE_KEYS.ADMIN_PASSWORD, await hashPassword(value));
-    return { success: true };
+  const changePassword = async (_oldPassword: string, _newPassword: string) => {
+    return { success: false, error: 'تغییر رمز فقط از طریق endpoint امن backend انجام می‌شود.' };
   };
 
   // Reset to Defaults
@@ -507,8 +381,6 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setAiConfig(DEFAULT_AI_CONFIG);
     setQuoteRequests(INITIAL_QUOTES);
     setConsultationRequests(INITIAL_CONSULTATIONS);
-    localStorage.removeItem(STORAGE_KEYS.ADMIN_PASSWORD);
-    setHasAdminPassword(false);
   };
 
   // Backup Export/Import
@@ -600,7 +472,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
         adminUser,
         isAuthenticated: !!adminUser,
         login,
-        setupPassword,
+        verifyMfa,
         hasAdminPassword,
         logout,
         changePassword,

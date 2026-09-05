@@ -9,3 +9,4 @@ env.txt
 # Local logs and temporary files
 *.log
 coverage/
+data/

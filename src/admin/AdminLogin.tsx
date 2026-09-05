@@ -13,18 +13,19 @@ import {
   Building
 } from 'lucide-react';
 import { useData } from '../context/DataContext';
+import { Turnstile } from '@marsidev/react-turnstile';
 
 interface AdminLoginProps {
   onBackToSite: () => void;
 }
 
 export const AdminLogin: React.FC<AdminLoginProps> = ({ onBackToSite }) => {
-  const { login, setupPassword, hasAdminPassword } = useData();
+  const { login, verifyMfa } = useData();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [captchaAnswer, setCaptchaAnswer] = useState('');
-  const [captcha] = useState(() => { const a = Math.floor(Math.random() * 8) + 2; const b = Math.floor(Math.random() * 8) + 2; return { a, b }; });
+  const [turnstileToken, setTurnstileToken] = useState('');
+  const [mfaRequired, setMfaRequired] = useState(false);
+  const [mfaCode, setMfaCode] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -33,14 +34,14 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onBackToSite }) => {
     e.preventDefault();
     setError(null);
     setIsLoading(true);
-    if (Number(captchaAnswer) !== captcha.a + captcha.b) { setError('پاسخ کپچا نادرست است.'); setIsLoading(false); return; }
-    if (!hasAdminPassword) {
-      if (password !== confirmPassword) { setError('تکرار رمز عبور یکسان نیست.'); setIsLoading(false); return; }
-      const result = await setupPassword(password);
-      if (!result.success) { setError(result.error || 'رمز عبور قابل قبول نیست.'); setIsLoading(false); return; }
-      setError('رمز اولیه ثبت شد؛ اکنون با همان رمز وارد شوید.'); setPassword(''); setConfirmPassword(''); setIsLoading(false); return;
+    if (mfaRequired) {
+      const result = await verifyMfa(mfaCode);
+      if (!result.success) setError(result.error || 'کد MFA نامعتبر است.');
+      setIsLoading(false);
+      return;
     }
-    const result = await login(username, password);
+    const result = await login(username, password, turnstileToken);
+    if (result.mfaRequired) { setMfaRequired(true); setError('کد برنامه Authenticator را وارد کنید.'); setIsLoading(false); return; }
     if (!result.success) { setError(result.error || 'اطلاعات ورود نامعتبر است.'); setIsLoading(false); }
   };
 
@@ -111,7 +112,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onBackToSite }) => {
           )}
 
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
+            {!mfaRequired && <div>
               <label className="block text-xs font-bold text-slate-300 mb-1.5">
                 نام کاربری مدیر
               </label>
@@ -126,9 +127,9 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onBackToSite }) => {
                 />
                 <User className="w-4 h-4 text-slate-500 absolute left-3 top-3" />
               </div>
-            </div>
+            </div>}
 
-            <div>
+            {!mfaRequired && <div>
               <label className="block text-xs font-bold text-slate-300 mb-1.5">
                 کلمه عبور امنیتی
               </label>
@@ -149,10 +150,9 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onBackToSite }) => {
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
               </div>
-            </div>
+            </div>}
 
-            {!hasAdminPassword && <div><label className="block text-xs font-bold text-slate-300 mb-1.5">تکرار رمز عبور</label><input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required minLength={12} className="w-full bg-slate-950/80 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white" /></div>}
-            <div><label className="block text-xs font-bold text-slate-300 mb-1.5">کپچا: حاصل {captcha.a} + {captcha.b} چیست؟</label><input inputMode="numeric" value={captchaAnswer} onChange={(e) => setCaptchaAnswer(e.target.value)} required className="w-full bg-slate-950/80 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white" /></div>
+            {mfaRequired ? <div><label className="block text-xs font-bold text-slate-300 mb-1.5">کد شش‌رقمی MFA</label><input inputMode="numeric" pattern="[0-9]{6}" maxLength={6} value={mfaCode} onChange={(e) => setMfaCode(e.target.value)} required className="w-full bg-slate-950/80 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white" /></div> : (import.meta.env.VITE_TURNSTILE_SITE_KEY ? <Turnstile siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY} onSuccess={setTurnstileToken} onExpire={() => setTurnstileToken('')} /> : <p className="text-xs text-amber-300">CAPTCHA در تنظیمات محیطی فعال نشده است.</p>)}
 
             <button
               type="submit"
@@ -170,7 +170,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onBackToSite }) => {
             </button>
           </form>
 
-          <p className="mt-6 text-center text-[11px] text-slate-500">رمز عبور پیش‌فرض وجود ندارد؛ آن را فقط روی همین دستگاه و در اولین ورود تنظیم کنید.</p>
+          <p className="mt-6 text-center text-[11px] text-slate-500">ورود فقط با نشست امن backend و CAPTCHA معتبر امکان‌پذیر است.</p>
 
         </div>
 

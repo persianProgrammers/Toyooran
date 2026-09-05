@@ -4,6 +4,8 @@ import { createServer as createViteServer } from "vite";
 import dotenv from "dotenv";
 import fs from "fs";
 import { ARTICLES, PRODUCTS } from "./src/data/mockData";
+import cookieParser from "cookie-parser";
+import { confirmMfa, getAdminState, loginAdmin, logoutAdmin, requireAdmin, requireMfaPending, setAdminState, startMfaSetup, verifyMfaSession } from "./server/auth";
 
 dotenv.config();
 
@@ -161,6 +163,7 @@ async function startServer() {
     next();
   });
   app.use(express.json({ limit: '100kb' }));
+  app.use(cookieParser());
 
   const apiHits = new Map<string, { count: number; resetAt: number }>();
   app.use('/api', (req, res, next) => {
@@ -171,6 +174,32 @@ async function startServer() {
     entry.count += 1; apiHits.set(key, entry);
     if (entry.count > 60) return res.status(429).json({ success: false, error: 'درخواست‌های بیش از حد' });
     next();
+  });
+
+  app.post('/api/auth/login', async (req, res) => {
+    const { username, password, turnstileToken } = req.body || {};
+    if (typeof username !== 'string' || typeof password !== 'string') return res.status(400).json({ success: false, error: 'اطلاعات ورود ناقص است.' });
+    const result = await loginAdmin(username, password, turnstileToken, req.ip, res);
+    res.status(result.success ? 200 : 401).json(result);
+  });
+  app.post('/api/auth/logout', requireAdmin, (req, res) => { logoutAdmin(req, res); res.status(204).end(); });
+  app.get('/api/auth/me', requireAdmin, (req, res) => res.json({ authenticated: true, admin: (req as any).admin }));
+  app.post('/api/auth/mfa/verify', requireMfaPending, async (req, res) => {
+    const ok = await verifyMfaSession(req as any, String(req.body?.token || ''));
+    res.status(ok ? 200 : 400).json({ success: ok, error: ok ? undefined : 'کد MFA نامعتبر است.' });
+  });
+  app.post('/api/auth/mfa/setup', requireAdmin, (req, res) => res.json(startMfaSetup((req as any).admin.id)));
+  app.post('/api/auth/mfa/confirm', requireAdmin, async (req, res) => {
+    const ok = await confirmMfa((req as any).admin.id, String(req.body?.token || ''));
+    res.status(ok ? 200 : 400).json({ success: ok, error: ok ? undefined : 'کد MFA نامعتبر است.' });
+  });
+  app.get('/api/admin/state/:key', requireAdmin, (req, res) => {
+    const value = getAdminState(req.params.key);
+    res.json({ value });
+  });
+  app.put('/api/admin/state/:key', requireAdmin, (req, res) => {
+    setAdminState(req.params.key, req.body?.value);
+    res.status(204).end();
   });
 
   // API Route: Send form submission / consultation to Bale Bot

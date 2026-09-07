@@ -118,7 +118,7 @@ const STORAGE_KEYS = {
   SERVICES: 'toyooran_services_v3',
   ARTICLES: 'toyooran_articles_v3',
   CATEGORIES: 'toyooran_categories_v4',
-  COMPANY_INFO: 'toyooran_company_v3',
+  COMPANY_INFO: 'toyooran_company_v5',
   HERO_CMS: 'toyooran_hero_cms_v3',
   AI_CONFIG: 'toyooran_ai_config_v3',
   QUOTES: 'toyooran_quotes_v3',
@@ -141,7 +141,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const [categories, setCategories] = useState<CategoryItem[]>(CATEGORIES_DATA as CategoryItem[]);
 
-  const [companyInfo, setCompanyInfo] = useState<CompanyInfo>(COMPANY_INFO as CompanyInfo);
+  const [companyInfo, setCompanyInfo] = useState<CompanyInfo>(() => { const saved = localStorage.getItem(STORAGE_KEYS.COMPANY_INFO); if (saved) { const parsed = JSON.parse(saved); if (!parsed.locations || parsed.locations.length === 0) return COMPANY_INFO as CompanyInfo; return parsed; } return COMPANY_INFO as CompanyInfo; });
 
   const [heroCms, setHeroCms] = useState<HeroCmsContent>(DEFAULT_HERO_CMS);
 

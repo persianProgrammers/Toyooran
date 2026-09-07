@@ -35,7 +35,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory, on
 
   
 
-  const mainPhone = companyInfo?.phoneNumbers?.[0] || '۰۲۱-۱۲۳۴۵۶۷۸';
+  const mainPhone = companyInfo?.phone || '09151126258';
   const email = companyInfo?.email || 'info@pooyapoultry.com';
   const hq = companyInfo?.locations?.find(loc => loc.type === 'headquarter');
 

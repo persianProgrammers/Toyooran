@@ -22,7 +22,7 @@ export const AboutContactUnifiedSection: React.FC = () => {
   
   // Clean Data Extractions
   const phones = [companyInfo.phone].filter(Boolean) || [];
-  const mainPhone = phones[0] || '09151126258';
+  const mainPhone = phones[0] || '۰۵۱-۳۶۶۶۵۶۰۰';
   const email = companyInfo.email || 'info@pooyapoultry.com';
   const locations = companyInfo.locations || [];
   
@@ -89,18 +89,7 @@ export const AboutContactUnifiedSection: React.FC = () => {
                 </div>
                 <div>
                   <span className="block text-[11px] sm:text-xs text-slate-500 font-bold mb-1 uppercase tracking-wider">مشاوره و فروش</span>
-                  <span className="block text-xl sm:text-2xl text-white font-black group-hover:text-amber-400 transition-colors drop-shadow-md" dir="ltr" style={{ textAlign: 'right' }}>{mainPhone}</span>
-                </div>
-              </div>
-              
-              {/* Email */}
-              <div className="group flex items-center gap-5 cursor-pointer mt-2">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white group-hover:scale-110 transition-all duration-500 shadow-lg  shrink-0">
-                  <Mail className="w-6 h-6 sm:w-7 sm:h-7" />
-                </div>
-                <div>
-                  <span className="block text-[11px] sm:text-xs text-slate-500 font-bold mb-1 uppercase tracking-wider">پست الکترونیک</span>
-                  <span className="block text-lg sm:text-xl text-white font-black group-hover:text-blue-400 transition-colors drop-shadow-md">{email}</span>
+                  <a href={`tel:${mainPhone}`} className="block text-xl sm:text-2xl text-white font-black group-hover:text-amber-400 transition-colors drop-shadow-md" dir="ltr" style={{ textAlign: 'right' }}>{mainPhone}</a>
                 </div>
               </div>
               
@@ -261,14 +250,14 @@ export const AboutContactUnifiedSection: React.FC = () => {
                             {/* Info Content Anchored Bottom */}
                             <div className="relative z-20 mt-auto p-6 sm:p-10 lg:p-12 flex flex-col w-full text-right pointer-events-auto">
                                 <div className="flex items-center gap-3 mb-6">
-                                  <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-black rounded-lg border  ${
+                                  {/* <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-black rounded-lg border  ${
                                     activeLocation.type === 'headquarter' ? 'text-amber-400 bg-amber-400/10 border-amber-400/20 shadow-[0_0_15px_rgba(251,191,36,0.15)]' :
                                     activeLocation.type === 'factory' ? 'text-blue-300 bg-[#003F86]/30 border-[#003F86]/50 shadow-[0_0_15px_rgba(0,63,134,0.3)]' :
                                     'text-emerald-400 bg-emerald-500/20 border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.15)]'
                                   }`}>
                                      {activeLocation.type === 'headquarter' ? <Building2 className="w-3.5 h-3.5"/> : activeLocation.type === 'factory' ? <Factory className="w-3.5 h-3.5"/> : <MapPin className="w-3.5 h-3.5"/>}
                                      {activeLocation.type === 'headquarter' ? 'دفتر مرکزی' : activeLocation.type === 'factory' ? 'سایت تولید' : 'شعبه / نمایندگی'}
-                                  </span>
+                                  </span> */}
                                 </div>
 
                                 <h4 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 drop-shadow-lg leading-tight">

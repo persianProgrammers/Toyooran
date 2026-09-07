@@ -12,7 +12,6 @@ export const COMPANY_INFO = {
   phone: '۰۵۱-۳۶۶۶۵۶۰۰',
   directSalesPhone: '۰۹۱۵۱۱۲۶۲۵۸',
   technicalSupportPhone: '۰۹۱۱۵۱۱۶۲۵۸',
-  email: 'info@toyooran.com',
   website: 'www.toyooran.com',
   address: 'مشهد، میدان مادر، مجتمع تجاری ادیب، طبقه ۳، واحد ۴۰۶',
   rdAddress: 'گرگان، دانشگاه منابع طبیعی گلستان، ساختمان دفتر تحقیق و توسعه، همکاری‌های علمی و بین‌الملل',
@@ -52,9 +51,9 @@ export const COMPANY_INFO = {
     },
     {
       id: 'branch-tehran',
-      title: 'دفتر نمایندگی تهران',
+      title: 'دفتر بازرگانی گرگان',
       type: 'branch',
-      address: 'تهران، میدان ونک، خیابان ولیعصر، برج نگار، طبقه ۱۰',
+      address: 'گرگان، میدان مفتح، ابتدای خیابان جمهوری، کارخانه نوآوری',
       mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.924843187216!2d51.40871141525946!3d35.75266738017772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e068b55555555%3A0x8e5e6b0f98cd3a21!2sVanak%20Square!5e0!3m2!1sen!2sus!4v1689234567890!5m2!1sen!2sus'
     }
   ]
@@ -699,7 +698,6 @@ export const INITIAL_QUOTES = [
       companyName: 'مزرعه پرورشی طبرستان',
       fullName: 'مهندس سعید میرزایی',
       phoneNumber: '09112255880',
-      email: 'mirzaei@farm.ir',
       additionalNotes: 'نیاز به برآورد قیمت خط کامل دانخوری بشقابی با موتور گیربکس اروپایی داریم. لطفا استعلام قیمت رسمی ارسال فرمایید.',
       hasAttachment: false,
     },
@@ -718,7 +716,6 @@ export const INITIAL_QUOTES = [
       companyName: 'کارخانه خوراک شرق نوین',
       fullName: 'دکتر علیرضا کاظمی',
       phoneNumber: '09153184490',
-      email: 'kazemi@feedmill.com',
       additionalNotes: 'طرح توسعه کارخانه خوراک داریم و مایل به استعلام دای و رولر ۵۰۸ به همراه کاندیشنر بخار دوجداره هستیم.',
       hasAttachment: true,
     },

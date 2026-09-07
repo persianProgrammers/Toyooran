@@ -14,7 +14,8 @@ import {
   Search, 
   FileText,
   Phone,
-  ChevronLeft
+  ChevronLeft,
+  FlaskConical
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PageSection } from '../types';
@@ -70,14 +71,16 @@ export const Navbar: React.FC<NavbarProps> = ({
     };
   }, [mobileMenuOpen]);
 
-  // Exact 7 items from the reference UI/UX mockup
+  // Nav items ordered right to left as requested:
+  // خانه, خدمات, محصولات, پروژه‌ها, تحقیق و توسعه, مجله, درباره ما, تماس با ما
   const navItems: { id: PageSection; path: string; label: string; icon: React.ElementType }[] = [
     { id: 'home', path: '/', label: 'خانه', icon: Home },
-    { id: 'about', path: '/about', label: 'درباره ما', icon: User },
-    { id: 'products', path: '/products', label: 'محصولات', icon: Package },
     { id: 'services', path: '/services', label: 'خدمات', icon: Wrench },
+    { id: 'products', path: '/products', label: 'محصولات', icon: Package },
     { id: 'projects', path: '/projects', label: 'پروژه‌ها', icon: Building },
+    { id: 'rnd', path: '/rnd', label: 'تحقیق و توسعه', icon: FlaskConical },
     { id: 'knowledge', path: '/magazine', label: 'مجله', icon: BookOpen },
+    { id: 'about', path: '/about', label: 'درباره ما', icon: User },
     { id: 'contact', path: '/contact', label: 'تماس با ما', icon: Compass },
   ];
 
@@ -87,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="fixed top-0 left-0 z-50 lg:top-4 lg:left-1/2 lg:-translate-x-1/2 bg-white/95  border-b lg:border border-white/60 lg:rounded-3xl px-4 sm:px-6 lg:px-4 py-3 lg:py-2.5 transition-all duration-300 lg:max-w-7xl lg:mx-auto shadow-[0_8px_32px_rgba(0,0,0,0.08)] w-full lg:w-[calc(100%-2rem)]">
+    <header className="fixed top-0 left-0 z-50 lg:top-4 lg:left-1/2 lg:-translate-x-1/2 bg-white/70 backdrop-blur-xl border-b lg:border border-white/60 lg:rounded-3xl px-4 sm:px-6 lg:px-4 py-3 lg:py-2.5 transition-all duration-300 lg:max-w-7xl lg:mx-auto shadow-[0_8px_32px_rgba(0,0,0,0.04)] w-full lg:w-[calc(100%-2rem)]">
       <div className="flex items-center justify-between w-full">
         
         {/* Left Side: Brand Logo */}
@@ -100,7 +103,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Logo Mark: Full Image */}
           <div className="h-10 sm:h-12 flex items-center justify-center relative group-hover:-translate-y-0.5 transition-transform duration-300">
              <img 
-               src="/images/logo-full.png" 
+               src="/images/logo-wide.png" 
                alt="Logo" 
                className="h-full w-auto object-contain"
              />
@@ -110,7 +113,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               TSPK
             </span>
             <span className="text-[10px] sm:text-[11px] font-extrabold text-slate-600 tracking-wider -mt-1">
-              طیوران صنعت
+              طیوران صنعت پویا
             </span>
           </div>
           
@@ -139,19 +142,15 @@ export const Navbar: React.FC<NavbarProps> = ({
         </nav>
 
         {/* Action Controls */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-2">
           
-          {/* Elegant Search Trigger */}
+          {/* Minimal Search Trigger */}
           <button 
             onClick={onOpenSearch}
-            className="flex items-center gap-3 bg-white/95 hover:bg-white border border-white/80 hover:border-white transition-all duration-300 rounded-full pl-1.5 pr-4 py-1.5 w-60 group cursor-pointer shadow-sm hover:shadow-md"
+            className="flex items-center justify-center w-10 h-10 bg-white/50 hover:bg-white border border-slate-200/50 hover:border-blue-200 transition-all duration-300 rounded-full group cursor-pointer shadow-sm hover:shadow-md"
+            title="جستجو"
           >
-            <span className="text-[13px] font-bold text-slate-500 group-hover:text-[#003F86] transition-colors">
-              جستجوی هوشمند...
-            </span>
-            <div className="mr-auto flex items-center justify-center w-8 h-8 rounded-full bg-[#003F86] text-white shadow-sm group-hover:scale-105 group-hover:shadow-blue-900/40 transition-all duration-300">
-              <Search className="w-4 h-4 font-bold" />
-            </div>
+            <Search className="w-5 h-5 text-slate-500 group-hover:text-[#003F86] transition-colors" />
           </button>
         </div>
 
@@ -159,7 +158,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex items-center gap-2 lg:hidden relative z-[60]">
           <button
             onClick={onOpenSearch}
-            className="p-2.5 text-slate-500 hover:text-[#003F86] hover:bg-slate-100 rounded-full transition-colors bg-white/95 "
+            className="p-2.5 text-slate-500 hover:text-[#003F86] hover:bg-white rounded-full transition-colors bg-white/50 backdrop-blur-md border border-white/60 shadow-sm"
             aria-label="جستجو"
           >
             <Search className="w-5 h-5" />
@@ -167,7 +166,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             id="mobile-menu-toggle-btn"
-            className="p-2.5 rounded-full text-slate-700 hover:bg-slate-100 transition-all duration-300 bg-white shadow-sm border border-slate-200 hover:scale-105 active:scale-95 flex items-center justify-center relative overflow-hidden"
+            className="p-2.5 rounded-full text-slate-700 hover:bg-white transition-all duration-300 bg-white/50 backdrop-blur-md shadow-sm border border-white/60 hover:scale-105 active:scale-95 flex items-center justify-center relative overflow-hidden"
             aria-label="Toggle Menu"
           >
             <AnimatePresence mode="wait">
@@ -193,17 +192,17 @@ export const Navbar: React.FC<NavbarProps> = ({
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: '-100%', opacity: 0 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="lg:hidden fixed inset-0 z-[100] bg-white/95  flex flex-col w-full h-[100dvh] overflow-hidden shadow-2xl"
+            className="lg:hidden fixed inset-0 z-[100] bg-white/70 backdrop-blur-2xl flex flex-col w-full h-[100dvh] overflow-hidden shadow-2xl"
           >
             {/* Top Header */}
-            <div className="flex items-center justify-between p-5 border-b border-slate-100/50 bg-white/95">
+            <div className="flex items-center justify-between p-5 border-b border-slate-100/50 bg-white/50 backdrop-blur-xl">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center p-2 shadow-inner border border-slate-200/50">
-                  <img src="/images/logo-full.png" alt="Logo" className="w-full h-full object-contain" />
+                <div className="h-10 w-auto min-w-[2.5rem] bg-slate-100 rounded-lg flex items-center justify-center px-2 py-1 shadow-inner border border-slate-200/50">
+                  <img src="/images/logo-wide.png" alt="Logo" className="w-full h-full object-contain " />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-lg font-black bg-gradient-to-r from-[#003F86] to-blue-600 bg-clip-text text-transparent">TSPK</span>
-                  <span className="text-[10px] font-extrabold text-slate-500 -mt-1">طیوران صنعت</span>
+                  <span className="text-[10px] font-extrabold text-slate-500 -mt-1">طیوران صنعت پویا</span>
                 </div>
               </div>
               

@@ -35,7 +35,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory, on
 
   
 
-  const mainPhone = companyInfo?.phone || '09151126258';
+  const mainPhone = '09151126258';
   const email = companyInfo?.email || 'info@pooyapoultry.com';
   const hq = companyInfo?.locations?.find(loc => loc.type === 'headquarter');
 
@@ -58,7 +58,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory, on
           <div className="lg:col-span-4 flex flex-col">
             <div className="flex items-center gap-3 mb-6">
                <div className="h-14 flex items-center justify-center">
-                  <img src="/images/logo-full.png" alt="Logo" className="h-full w-auto object-contain " />
+                  <img src="/images/logo-wide.png" alt="Logo" className="h-full w-auto object-contain" />
                </div>
                <div>
                   <h3 className="text-xl font-black text-white tracking-tight">{companyInfo?.name}</h3>
@@ -192,20 +192,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory, on
                 </div>
                 <div>
                   <span className="block text-[10px] text-slate-500 font-bold mb-1">تلفن مشاوره و فروش</span>
-                  <a href={`tel:${mainPhone}`} className="text-slate-300 hover:text-white font-medium text-sm transition-colors" dir="ltr">{mainPhone}</a>
+                  <a href="tel:09151126258" className="text-slate-300 hover:text-white font-medium text-sm transition-colors" dir="ltr">۰۹۱۵۱۱۲۶۲۵۸</a>
                 </div>
               </div>
               
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 mt-1">
-                  <Mail className="w-4 h-4 text-blue-400" />
-                </div>
-                <div>
-                  <span className="block text-[10px] text-slate-500 font-bold mb-1">پست الکترونیک</span>
-                  <a href={`mailto:${email}`} className="text-slate-300 hover:text-white font-medium text-sm transition-colors">{email}</a>
-                </div>
-              </div>
-
               {hq && (
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 mt-1">

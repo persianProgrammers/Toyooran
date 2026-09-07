@@ -85,7 +85,6 @@ export const ProductsTab: React.FC = () => {
       applications: editingProduct?.applications || [],
       specs: editingProduct?.specs || [],
       models: editingProduct?.models || [],
-      isIndustrialMachine: false
     };
 
     if (isCreating) {

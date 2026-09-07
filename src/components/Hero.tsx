@@ -32,7 +32,7 @@ interface HeroProps {
   children?: React.ReactNode;
 }
 
-interface CircleCategoryCard {
+export interface CircleCategoryCard {
   id: ProductCategory;
   title: string;
   categoryEn: string;
@@ -134,7 +134,7 @@ const ThematicParticles = ({ id, isHovered }: { id: string, isHovered: boolean }
 }
 
 
-const ServiceCard: React.FC<{ card: any, idx: number, onClick: () => void }> = ({ card, idx, onClick }) => {
+export const ServiceCard: React.FC<{ card: any, idx: number, onClick: () => void }> = ({ card, idx, onClick }) => {
   const Icon = card.icon;
   return (
     <div

@@ -13,12 +13,72 @@ import {
 import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'motion/react';
 import { Service } from '../types';
 import { SERVICES } from '../data/mockData';
+import { ServiceCard } from './Hero';
+
+import { Fan } from 'lucide-react';
+const categoryCards = [
+    {
+      id: 'heating',
+      title: 'ماشین‌آلات خوراک',
+      categoryEn: 'Feed Machinery',
+      icon: Factory,
+      desc: 'پرس پلت، اکسترودر، میکرودایزینگ و آسیاب میکسر',
+      badge: 'کارخانجات خوراک',
+      accentColor: '#003F86',
+      badgeBg: 'bg-blue-50',
+      badgeText: 'text-[#003F86]',
+      specs: ['پرس پلت ۲ الی ۲۰ تن/ساعت', 'میکرودایزینگ دقیق افزودنی‌ها'],
+      bgImage: '/images/service_feed_machinery.jpg'
+    },
+    {
+      id: 'ventilation',
+      title: 'تجهیزات مرغداری',
+      categoryEn: 'Farm Equipment',
+      icon: Fan,
+      desc: 'بشقاب پروانه‌ای FDA، آبخوری نیپل و جت هیتر',
+      badge: 'تاییدیه FDA آمریکا',
+      accentColor: '#FF9F14',
+      badgeBg: 'bg-amber-50',
+      badgeText: 'text-amber-700',
+      specs: ['بشقاب پروانه‌ای لیسانس آمریکا', 'جت هیتر و سیستم‌های گرمایشی'],
+      bgImage: '/images/service_farm_equipment.jpg'
+    },
+    {
+      id: 'cooling',
+      title: 'سوله و سالن صنعتی',
+      categoryEn: 'Turnkey Shed',
+      icon: Building2,
+      desc: 'طراحی، ساخت و تجهیز کامل سوله‌های پرورشی',
+      badge: 'پیمانکاری Turn-key',
+      accentColor: '#10B981',
+      badgeBg: 'bg-emerald-50',
+      badgeText: 'text-emerald-700',
+      specs: ['سازه‌های مقاوم و عایق', 'اتوماسیون هوشمند یکپارچه'],
+      bgImage: '/images/service_turnkey_shed.jpg'
+    },
+    {
+      id: 'other',
+      title: 'قطعات و پشتیبانی',
+      categoryEn: 'Parts & Support',
+      icon: Wrench,
+      desc: 'تامین قطعات یدکی، گارانتی ۲۴ ماهه و تعمیرات',
+      badge: 'خدمات پس از فروش',
+      accentColor: '#F43F5E',
+      badgeBg: 'bg-rose-50',
+      badgeText: 'text-rose-700',
+      specs: ['تامین فوری قطعات مصرفی', 'پشتیبانی فنی ۲۴/۷'],
+      bgImage: '/images/service_supplements.jpg'
+    }
+  ];
+
+import { useNavigate } from 'react-router-dom';
 
 import { InnerScrollIndicator } from './InnerScrollIndicator';
 
 interface ServicesSectionProps {
   services?: Service[];
   onSelectService: (service: Service) => void;
+  onSelectCategory?: (categoryId: any) => void;
   onOpenConsultation: () => void;
 }
 
@@ -34,6 +94,7 @@ const iconMap: Record<string, React.ElementType> = {
 export const ServicesSection: React.FC<ServicesSectionProps> = ({
   services = SERVICES,
   onSelectService,
+  onSelectCategory,
   onOpenConsultation,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -85,80 +146,15 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 lg:pb-24 relative z-10">
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {displayedServices.map((service, index) => {
-              const Icon = iconMap[service.iconName] || Wrench;
-              
-              return (
-                <motion.div
-                  
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
-                  key={service.id}
-                  className="relative bg-white/95  transform-gpu will-change-transform rounded-[2rem] overflow-hidden border border-white/80 shadow-lg shadow-slate-200/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer flex flex-col h-full origin-center"
-                  onClick={() => onSelectService(service)}
-                >
-                {/* Accent Top Border */}
-                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#003F86] to-amber-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
-                
-                <div className="p-6 sm:p-8 flex-1 flex flex-col">
-                  {/* Icon Column */}
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-50 border border-slate-200 text-[#003F86] group-hover:text-amber-500 group-hover:border-amber-200 group-hover:scale-110 group-hover:rotate-3 flex items-center justify-center transition-all duration-500 shadow-sm mb-6">
-                    <Icon className="w-8 h-8 stroke-[1.5]" />
-                  </div>
-                  
-                  {/* Content Column */}
-                  <div className="flex-1 flex flex-col">
-                    <h3 className="text-xl sm:text-2xl font-black text-slate-900 group-hover:text-[#003F86] transition-colors mb-3 leading-tight">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-slate-500 leading-relaxed font-medium mb-6">
-                      {service.tagline}
-                    </p>
-                    
-                    {/* Problem Solving Box */}
-                    <div className="bg-rose-50/50 border border-rose-100 rounded-xl p-4 transition-colors group-hover:bg-rose-50 mb-4">
-                      <span className="text-[10px] sm:text-xs font-bold text-rose-600 block mb-1.5 uppercase tracking-wider">چالش صنعتی</span>
-                      <p className="text-xs text-rose-900/80 leading-relaxed">
-                        {service.problemSolved}
-                      </p>
-                    </div>
-                    
-                    {/* Deliverables List */}
-                    <div className="bg-emerald-50/50 border border-emerald-100 rounded-xl p-4 transition-colors group-hover:bg-emerald-50 flex flex-col justify-center mb-6">
-                      <span className="text-[10px] sm:text-xs font-bold text-emerald-700 block mb-2 uppercase tracking-wider">راه‌حل ما</span>
-                      <div className="space-y-2">
-                        {service.whatWeProvide.slice(0, 2).map((item, idx) => (
-                          <div key={idx} className="flex items-start gap-2 text-xs text-emerald-900/80">
-                            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                            <span className="leading-tight font-medium">{item}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Footer / CTA */}
-                  <div className="pt-4 border-t border-slate-200 flex items-center justify-between text-sm font-bold text-[#003F86] group-hover:text-amber-500 transition-colors gap-2 mt-auto">
-                    <span>مشاهده فرآیند اجرایی</span>
-                    <div className="w-8 h-8 rounded-full bg-blue-50 group-hover:bg-amber-50 flex items-center justify-center group-hover:-translate-x-1 transition-all">
-                      <ChevronLeft className="w-4 h-4" />
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Lazy Load Trigger */}
-        {visibleCount < services.length && (
-          <div ref={loadMoreRef} className="w-full h-20 flex items-center justify-center mt-8">
-            <div className="w-8 h-8 border-4 border-amber-400 border-t-transparent rounded-full animate-spin opacity-50" />
+        
+        {/* 🎨 Dribbble-Worthy High-Fidelity Magic Cards */}
+        <div className="relative z-10 w-full py-8 lg:py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 w-full">
+            {categoryCards.map((card, idx) => (
+              <ServiceCard key={idx} idx={idx} card={card} onClick={() => onSelectCategory && onSelectCategory(card.id)} />
+            ))}
           </div>
-        )}
+        </div>
       </div>
     </section>
   );

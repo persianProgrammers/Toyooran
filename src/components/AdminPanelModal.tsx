@@ -512,7 +512,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                     <div key={prod.id} className="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
                       <div>
                         <div className="h-32 rounded-xl overflow-hidden mb-3 bg-slate-100">
-                          <img src={prod.image} alt={prod.name} className="w-full h-full object-cover" />
+                          <img src={prod.image} alt={prod.name} className="w-full h-full object-cover" onError={(e) => { e.currentTarget.src="/images/product-placeholder.svg"; }} />
                         </div>
                         <span className="text-[10px] text-amber-600 font-bold bg-amber-50 px-2 py-0.5 rounded-full">
                           {prod.categoryTitle}

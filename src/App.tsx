@@ -25,6 +25,8 @@ import { FeaturedProjectsSection } from './components/FeaturedProjectsSection';
 import { MagazineFeed } from './components/magazine/MagazineFeed';
 import { MagazineArticle } from './components/magazine/MagazineArticle';
 import { AboutPage } from './components/AboutPage';
+import { RnDPage } from './components/RnDPage';
+import { CompactShowcase } from './components/CompactShowcase';
 import { ContactPage } from './components/ContactPage';
 import { AboutContactUnifiedSection } from './components/AboutContactUnifiedSection';
 import { Footer } from './components/Footer';
@@ -134,6 +136,7 @@ const MainAppInner: React.FC = () => {
     else if (section === 'projects') navigate('/projects');
     else if (section === 'knowledge') navigate('/magazine');
     else if (section === 'about') navigate('/about');
+    else if (section === 'rnd') navigate('/rnd');
     else if (section === 'contact') navigate('/contact');
   };
   
@@ -144,6 +147,7 @@ const MainAppInner: React.FC = () => {
                          location.pathname === '/projects' ? 'projects' : 
                          location.pathname.startsWith('/magazine') ? 'knowledge' : 
                          location.pathname === '/about' ? 'about' : 
+                         location.pathname === '/rnd' ? 'rnd' : 
                          location.pathname === '/contact' ? 'contact' : 'home';
 
   const handleSelectCategory = (cat: ProductCategory | 'all') => {
@@ -229,6 +233,13 @@ const MainAppInner: React.FC = () => {
                 onOpenQuote={() => handleOpenUnifiedConsultation('استعلام قیمت و پیش‌فاکتور')}
                 onOpenAiAssistant={() => setIsAiAssistantOpen(true)}
               >
+                <CompactShowcase 
+                  products={products}
+                  articles={articles}
+                  onNavigate={handleNavigateSection}
+                  onSelectProduct={handleSelectProductById}
+                  onSelectArticle={(articleId) => navigate(`/magazine/${articleId}`)}
+                />
                 <AboutContactUnifiedSection />
               </Hero>
             </SEORoute>
@@ -250,6 +261,7 @@ const MainAppInner: React.FC = () => {
               <ServicesSection
                 services={services}
                 onSelectService={setSelectedService}
+                onSelectCategory={handleSelectCategory}
                 onOpenConsultation={() => handleOpenUnifiedConsultation('سوله و سالن صنعتی')}
               />
             </SEORoute>
@@ -284,6 +296,11 @@ const MainAppInner: React.FC = () => {
           <Route path="/about" element={
             <SEORoute title="درباره ما | شرکت طیوران صنعت پویا" description="معرفی شرکت طیوران صنعت پویا، تاریخچه، گواهینامه‌ها و چشم‌انداز فعالیت در حوزه تجهیزات مدرن مرغداری.">
               <AboutPage />
+            </SEORoute>
+          } />
+          <Route path="/rnd" element={
+            <SEORoute title="تحقیق و توسعه | شرکت طیوران صنعت پویا" description="واحد تحقیق و توسعه شرکت طیوران صنعت پویا.">
+              <RnDPage />
             </SEORoute>
           } />
           <Route path="/contact" element={

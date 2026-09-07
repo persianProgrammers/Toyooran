@@ -1,4 +1,4 @@
-export type PageSection = 'home' | 'projects' | 'products' | 'services' | 'knowledge' | 'about' | 'contact' | 'magazine-article';
+export type PageSection = 'home' | 'projects' | 'products' | 'services' | 'knowledge' | 'about' | 'contact' | 'magazine-article' | 'rnd';
 
 export type ProductCategory = 
   | 'heating'
@@ -61,7 +61,6 @@ export interface Product {
   nameEn?: string;
   category: ProductCategory;
   categoryTitle: string;
-  isIndustrialMachine?: boolean;
   shortDescription: string;
   fullDescription: string;
   image: string;

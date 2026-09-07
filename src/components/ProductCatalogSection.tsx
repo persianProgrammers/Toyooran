@@ -196,12 +196,7 @@ export const ProductCatalogSection: React.FC<ProductCatalogSectionProps> = ({
                         {product.categoryTitle.replace(/ مرغداری$/, '')}
                       </div>
                       
-                      {product.isIndustrialMachine && (
-                        <div className="absolute top-4 left-4 bg-amber-400 px-3 py-1.5 rounded-full text-[11px] font-bold text-slate-900 shadow-sm flex items-center gap-1">
-                          <Zap className="w-3.5 h-3.5" />
-                          صنعتی
-                        </div>
-                      )}
+                      
                     </div>
 
                     {/* Content Area */}

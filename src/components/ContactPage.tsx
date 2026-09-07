@@ -103,20 +103,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     </div>
                     <div>
                       <span className="text-slate-400 block text-xs mb-1">واحد فروش و استعلام:</span>
-                      <a href={`tel:\${companyInfo.salesPhone || companyInfo.phone}`} className="font-mono font-bold text-white text-base hover:text-blue-400 transition-colors drop-shadow-md">
-                        {companyInfo.salesPhone || companyInfo.phone}
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-emerald-400/30 hover:bg-white/10 transition-all duration-300">
-                    <div className="w-10 h-10 rounded-xl bg-emerald-400/10 text-emerald-400 flex items-center justify-center shrink-0 shadow-inner shadow-emerald-400/20">
-                      <Mail className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <span className="text-slate-400 block text-xs mb-1">پست الکترونیک رسمی:</span>
-                      <a href={`mailto:\${companyInfo.email}`} className="font-mono text-slate-200 text-sm hover:text-emerald-400 transition-colors">
-                        {companyInfo.email}
+                      <a href="tel:09151126258" className="font-mono font-bold text-white text-base hover:text-blue-400 transition-colors drop-shadow-md" style={{ direction: 'ltr', display: 'inline-block' }}>
+                        ۰۹۱۵۱۱۲۶۲۵۸
                       </a>
                     </div>
                   </div>
@@ -303,14 +291,14 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                             {/* Info Content Anchored Bottom */}
                             <div className="relative z-20 mt-auto p-6 sm:p-10 lg:p-12 flex flex-col w-full text-right pointer-events-auto">
                                 <div className="flex items-center gap-3 mb-6">
-                                  <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-black rounded-lg border  ${
+                                  {/* <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-black rounded-lg border  ${
                                     activeLocation.type === 'headquarter' ? 'text-amber-400 bg-amber-400/10 border-amber-400/20 shadow-[0_0_15px_rgba(251,191,36,0.15)]' :
                                     activeLocation.type === 'factory' ? 'text-blue-300 bg-[#003F86]/30 border-[#003F86]/50 shadow-[0_0_15px_rgba(0,63,134,0.3)]' :
                                     'text-emerald-400 bg-emerald-500/20 border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.15)]'
                                   }`}>
                                      {activeLocation.type === 'headquarter' ? <Building2 className="w-3.5 h-3.5"/> : activeLocation.type === 'factory' ? <Factory className="w-3.5 h-3.5"/> : <MapPin className="w-3.5 h-3.5"/>}
                                      {activeLocation.type === 'headquarter' ? 'دفتر مرکزی' : activeLocation.type === 'factory' ? 'سایت تولید' : 'شعبه / نمایندگی'}
-                                  </span>
+                                  </span> */}
                                 </div>
 
                                 <h4 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 drop-shadow-lg leading-tight">

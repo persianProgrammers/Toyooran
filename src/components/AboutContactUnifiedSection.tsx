@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { AparatIcon } from "./AparatIcon";
 import { motion, AnimatePresence } from 'motion/react';
 import toast from 'react-hot-toast';
 import { 
@@ -12,7 +13,10 @@ import {
   Linkedin,
   Building2,
   Factory,
-  Map
+  Map,
+  Youtube,
+  Tv,
+  Grid
 } from 'lucide-react';
 import { useData } from '../context/DataContext';
 
@@ -125,17 +129,43 @@ export const AboutContactUnifiedSection: React.FC = () => {
                     <Send className="w-4 h-4 ml-0.5" />
                   </a>
                   <a 
-                    href={companyInfo.socialLinks?.whatsapp || '#'} 
+                    href={companyInfo.socialLinks?.aparat || '#'} 
                     onClick={(e) => {
-                      if (!companyInfo.socialLinks?.whatsapp) {
+                      if (!companyInfo.socialLinks?.aparat) {
                         e.preventDefault();
-                        toast('به زودی پشتیبانی واتساپ ما فعال می‌شود', { icon: '✨' });
+                        toast('به زودی کانال آپارات ما راه‌اندازی می‌شود', { icon: '✨' });
                       }
                     }}
                     target="_blank" 
                     rel="noreferrer" 
-                    className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-slate-400 flex items-center justify-center hover:bg-[#25D366] hover:text-white hover:border-transparent hover:scale-110 hover:-rotate-12 transition-all duration-300">
-                    <MessageCircle className="w-4 h-4" />
+                    className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-slate-400 flex items-center justify-center hover:bg-[#263238] hover:text-white hover:border-transparent hover:scale-110 hover:-rotate-12 transition-all duration-300">
+                    <AparatIcon className="w-4 h-4" />
+                  </a>
+                  <a 
+                    href={companyInfo.socialLinks?.rubika || '#'} 
+                    onClick={(e) => {
+                      if (!companyInfo.socialLinks?.rubika) {
+                        e.preventDefault();
+                        toast('به زودی کانال روبیکا ما راه‌اندازی می‌شود', { icon: '✨' });
+                      }
+                    }}
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-slate-400 flex items-center justify-center hover:bg-gradient-to-r hover:from-[#ff7300] hover:to-[#7600b5] hover:text-white hover:border-transparent hover:scale-110 hover:rotate-12 transition-all duration-300">
+                    <Grid className="w-4 h-4" />
+                  </a>
+                  <a 
+                    href={companyInfo.socialLinks?.youtube || '#'} 
+                    onClick={(e) => {
+                      if (!companyInfo.socialLinks?.youtube) {
+                        e.preventDefault();
+                        toast('به زودی کانال یوتیوب ما راه‌اندازی می‌شود', { icon: '✨' });
+                      }
+                    }}
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-slate-400 flex items-center justify-center hover:bg-[#ff0000] hover:text-white hover:border-transparent hover:scale-110 hover:-rotate-12 transition-all duration-300">
+                    <Youtube className="w-4 h-4" />
                   </a>
                   <a 
                     href={companyInfo.socialLinks?.linkedin || '#'} 
@@ -161,7 +191,7 @@ export const AboutContactUnifiedSection: React.FC = () => {
               
               <div className="flex items-center gap-6 mb-10 opacity-60">
                 <div className="h-px flex-1 bg-gradient-to-l from-white/20 to-transparent" />
-                <h3 className="text-white/80 font-bold text-lg tracking-widest uppercase">دایرکتوری مراکز و شعب</h3>
+                <h3 className="text-white/80 font-bold text-lg tracking-widest uppercase">آدرس مراکز و شعب</h3>
                 <div className="h-px flex-1 bg-gradient-to-r from-white/20 to-transparent" />
               </div>
 

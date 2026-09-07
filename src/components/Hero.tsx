@@ -166,19 +166,12 @@ export const ServiceCard: React.FC<{ card: any, idx: number, onClick: () => void
         {/* Subtle Grid Texture */}
         
         {/* Huge Number Graphic in Background */}
-        <div className="absolute -top-4 -right-4 text-[120px] font-black [-webkit-text-stroke:1.5px_rgba(255,255,255,0.1)] group-hover:[-webkit-text-stroke:3px_rgba(251,191,36,0.7)] text-transparent group-hover:text-amber-500/20 transition-all duration-700 pointer-events-none group-hover:scale-110 group-hover:-translate-x-4 group-hover:translate-y-4 origin-top-right">
+        <div className="absolute -top-4 -right-4 text-[120px] font-light [-webkit-text-stroke:0.5px_rgba(255,255,255,0.3)] group-hover:[-webkit-text-stroke:1px_rgba(251,191,36,0.6)] text-transparent group-hover:text-amber-500/10 transition-all duration-700 pointer-events-none group-hover:scale-110 group-hover:-translate-x-4 group-hover:translate-y-4 origin-top-right">
           0{idx + 1}
         </div>
         
-        {/* Top Badge */}
-        <div className="relative z-20 flex justify-end w-full">
-          <span className="inline-block px-3 py-1.5 rounded-full bg-white/10 border border-white/50 text-[10px] sm:text-xs font-bold text-white group-hover:border-amber-400/60 group-hover:text-amber-300 group-hover:bg-amber-400/20 transition-all duration-500 transform-gpu will-change-transform shadow-[0_4px_15px_rgba(0,0,0,0.3)]">
-            {card.badge}
-          </span>
-        </div>
-        
         {/* Center Animated HUD Icon */}
-        <div className="flex-1 flex flex-col items-center justify-center relative z-20 transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:-translate-y-4">
+        <div className="flex-1 flex flex-col items-center justify-center relative z-20 transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:-translate-y-4 mt-4">
             <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center">
               {/* Tech Radar Rings - Dynamic Colors */}
               {(() => {
@@ -399,7 +392,7 @@ const Hero: React.FC<HeroProps> = ({
           >
             <span className="w-2 h-2 rounded-full bg-amber-400 " />
             <span className="text-xs sm:text-sm font-medium text-slate-100 tracking-wide">
-              {cmsHero?.pillText || 'پیشگام در طراحی سالن و تجهیزات مدرن مرغداری'}
+              {cmsHero?.pillText || 'با نیم قرن تجربه و بیش از ۲۰۰ پروژه ملی و بین‌المللی'}
             </span>
           </motion.div>
 
@@ -491,7 +484,7 @@ const Hero: React.FC<HeroProps> = ({
                 دسته‌بندی تخصصی طیوران صنعت پویا
               </span>
               <h2 className="text-xl sm:text-2xl font-black text-[#003F86]">
-                خطوط تولید، تجهیزات و خدمات صفر تا صد مرغداری
+                طراحی، ساخت و تجهیز پروژه‌های صنعتی در دام، طیور و آبزیان
               </h2>
             </div>
 
@@ -531,7 +524,7 @@ const Hero: React.FC<HeroProps> = ({
                           <div>
                              <span className="text-[10px] sm:text-[11px] font-bold text-amber-400/90 tracking-widest uppercase mb-1.5 block drop-shadow-md">Engineering Excellence</span>
                              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white drop-shadow-lg mb-2">شرکت طیوران صنعت پویا</h2>
-                             <p className="text-sm sm:text-base text-blue-100/90 max-w-xl leading-relaxed font-medium">پیمانکار تخصصی و استراتژیک تجهیزات مدرن پرورشی، با ۲۴ ماه گارانتی بی‌قید و شرط قطعات و خدمات نصب در سراسر کشور.</p>
+                             <p className="text-sm sm:text-base text-blue-100/90 max-w-xl leading-relaxed font-medium">از طراحی و ساخت تا تجهیز و بهره‌برداری؛ راهکاری یکپارچه برای پروژه‌های صنعت دام، طیور و آبزیان</p>
                           </div>
                        </div>
 
@@ -554,11 +547,11 @@ const Hero: React.FC<HeroProps> = ({
               <div className="flex items-center gap-4">
                 <span className="font-bold text-slate-800 flex items-center gap-1.5">
                   <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                  استاندارد ماشین‌آلات سنگین CE
+                  مشاوره رایگان
                 </span>
                 <span className="hidden sm:inline text-slate-300">|</span>
                 <span className="hidden sm:inline text-slate-500">
-                  پشتیبانی فنی ۲۴/۷ و تامین فوری قطعات کارخانه
+                  ارائه خدمات نصب و پشتیبانی فنی، متناسب با نوع پروژه و محصول
                 </span>
               </div>
 
@@ -567,7 +560,7 @@ const Hero: React.FC<HeroProps> = ({
                   onClick={() => onNavigate('contact')}
                   className="text-[#003F86] hover:text-amber-500 font-bold flex items-center gap-1 transition-colors cursor-pointer"
                 >
-                  <span>مشاوره و تماس با ما</span>
+                  <span>تماس با ما</span>
                   <ChevronLeft className="w-3.5 h-3.5" />
                 </button>
               </div>

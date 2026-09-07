@@ -19,13 +19,15 @@ export const COMPANY_INFO = {
   workingHours: 'شنبه تا چهارشنبه ۸:۰۰ الی ۱۷:۰۰ | پنج‌شنبه‌ها ۸:۰۰ الی ۱۳:۰۰',
   fdaLicense: 'تنها تولیدکننده بشقاب‌های پروانه‌ای تحت لیسانس Butterfly Concepts آمریکا با تاییدیه FDA',
   socialLinks: {
-    instagram: 'https://www.instagram.com/tspk_complex/',
-    telegram: '',
+    instagram: 'https://www.instagram.com/toyooranco/',
+    telegram: 'https://t.me/toyooranco',
+    linkedin: 'https://www.linkedin.com/company/toyooranco',
+    rubika: 'https://rubika.ir/toyooranco',
+    aparat: 'https://www.aparat.com/toyooranco',
+    youtube: 'http://www.youtube.com/@Toyooranco',
     whatsapp: '',
-    linkedin: '',
     bale: '',
     eitaa: '',
-    rubika: '',
   },
   locations: [
     {
@@ -152,7 +154,7 @@ export const CATEGORIES_DATA = [
   }
 ];
 
-export { PRODUCTS } from './productsData';
+export const PRODUCTS: Product[] = [];
 
 export const PROJECTS: Project[] = [
   {
@@ -665,8 +667,8 @@ export const TESTIMONIALS_AND_PROOF = [
 
 export const DEFAULT_HERO_CMS = {
   title: 'طیوران صنعت پویا',
-  subtitle: 'توسعه، تجهیز و هوشمندسازی کارخانجات خوراک دام و طیور با بالاترین استانداردهای مهندسی روز دنیا.',
-  pillText: 'پیشگام در طراحی سالن و تجهیزات مدرن مرغداری',
+  subtitle: 'طراح، مجری و مشاور توسعه و بهره‌برداری پروژه‌های صنعت دام، طیور و آبزیان',
+  pillText: 'با نیم قرن تجربه و بیش از ۲۰۰ پروژه ملی و بین‌المللی',
   ctaPrimaryText: 'محصولات و تجهیزات',
   ctaSecondaryText: 'تماس با ما',
   backgroundImage: '/images/hero-1.jpg'

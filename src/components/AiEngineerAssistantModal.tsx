@@ -130,7 +130,7 @@ export const AiEngineerAssistantModal: React.FC<AiEngineerAssistantModalProps> =
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60  animate-in fade-in duration-200">
       
-      <div className="bg-white border border-slate-200 rounded-3xl w-full max-w-4xl h-[90vh] max-h-[750px] shadow-2xl flex flex-col overflow-hidden relative font-['Vazirmatn',sans-serif]">
+      <div className="bg-white border border-slate-200 rounded-3xl w-full max-w-4xl h-[90vh] max-h-[750px] shadow-2xl flex flex-col overflow-hidden relative font-['Estedad',sans-serif]">
         
         {/* Modal Header */}
         <div className="bg-[#003F86] text-white p-4 sm:p-5 flex items-center justify-between border-b border-blue-900 shadow-md">

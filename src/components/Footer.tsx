@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { AparatIcon } from "./AparatIcon";
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { 
@@ -9,6 +10,9 @@ import {
   Send, 
   MessageCircle, 
   Linkedin,
+  Youtube,
+  Tv,
+  Grid,
   ArrowLeft,
   ChevronLeft
 } from 'lucide-react';
@@ -66,7 +70,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory, on
                </div>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed font-medium mb-8 max-w-sm">
-              طیوران صنعت پویا، با بیش از پنج دهه تجربه، پیشگام در طراحی، تولید و اجرای مدرن‌ترین تجهیزات پرورشی و کارخانجات خوراک دام و طیور در خاورمیانه است.
+              شرکت طیوران صنعت پویا، با بیش از 50 سال سابقه، پیشگام در طراحی، تولید و اجرای تجهیزات پرورشی و کارخانجات خوراک دام و طیور در خاورمیانه است.
             </p>
             
             {/* Social Links */}
@@ -98,17 +102,43 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory, on
                 <Send className="w-4 h-4 ml-0.5 group-hover:scale-110 transition-transform" />
               </a>
               <a 
-                href={companyInfo?.socialLinks?.whatsapp || '#'} 
+                href={companyInfo?.socialLinks?.aparat || '#'} 
                 onClick={(e) => {
-                  if (!companyInfo?.socialLinks?.whatsapp) {
+                  if (!companyInfo?.socialLinks?.aparat) {
                     e.preventDefault();
-                    toast('به زودی پشتیبانی واتساپ ما فعال می‌شود', { icon: '✨' });
+                    toast('به زودی کانال آپارات ما راه‌اندازی می‌شود', { icon: '✨' });
                   }
                 }}
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#25D366] hover:border-transparent transition-all duration-300 group">
-                <MessageCircle className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#263238] hover:border-transparent transition-all duration-300 group">
+                <AparatIcon className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              </a>
+              <a 
+                href={companyInfo?.socialLinks?.rubika || '#'} 
+                onClick={(e) => {
+                  if (!companyInfo?.socialLinks?.rubika) {
+                    e.preventDefault();
+                    toast('به زودی کانال روبیکا ما راه‌اندازی می‌شود', { icon: '✨' });
+                  }
+                }}
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-gradient-to-r hover:from-[#ff7300] hover:to-[#7600b5] hover:border-transparent transition-all duration-300 group">
+                <Grid className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              </a>
+              <a 
+                href={companyInfo?.socialLinks?.youtube || '#'} 
+                onClick={(e) => {
+                  if (!companyInfo?.socialLinks?.youtube) {
+                    e.preventDefault();
+                    toast('به زودی کانال یوتیوب ما راه‌اندازی می‌شود', { icon: '✨' });
+                  }
+                }}
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#ff0000] hover:border-transparent transition-all duration-300 group">
+                <Youtube className="w-4 h-4 group-hover:scale-110 transition-transform" />
               </a>
               <a 
                 href={companyInfo?.socialLinks?.linkedin || '#'} 
@@ -217,7 +247,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory, on
 
         {/* Copyright & Credits */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-medium text-slate-500">
-          <p>© {currentYear} تمامی حقوق برای <span className="text-slate-300">{companyInfo?.name}</span> محفوظ است.</p>
+          <p>
+            © {currentYear} تمامی حقوق این وب‌سایت متعلق به <span className="text-slate-300">{companyInfo?.name}</span> می‌باشد. طراحی و توسعه توسط <span className="text-slate-300">شرکت هزارتو</span>.
+          </p>
           <div className="flex items-center gap-4">
              <a href="#" className="hover:text-slate-300 transition-colors">قوانین و مقررات</a>
              <div className="w-1 h-1 rounded-full bg-slate-700" />

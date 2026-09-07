@@ -141,6 +141,8 @@ export interface CompanyInfo {
     bale?: string;
     eitaa?: string;
     rubika?: string;
+    aparat?: string;
+    youtube?: string;
   };
   locations?: {
     id: string;

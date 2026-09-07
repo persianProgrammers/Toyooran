@@ -148,7 +148,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
   );
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/85  animate-in fade-in duration-200 font-['Vazirmatn',sans-serif]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/85  animate-in fade-in duration-200 font-['Estedad',sans-serif]">
       
       <div className="bg-white border border-slate-200 rounded-3xl w-full max-w-6xl h-[92vh] max-h-[820px] shadow-2xl flex flex-col overflow-hidden relative">
         

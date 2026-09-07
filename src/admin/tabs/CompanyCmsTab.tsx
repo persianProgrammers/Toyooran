@@ -199,16 +199,30 @@ export const CompanyCmsTab: React.FC = () => {
             />
           </div>
           <div>
-            <label className="block text-xs font-bold text-slate-300 mb-1">واتس‌اپ</label>
+            <label className="block text-xs font-bold text-slate-300 mb-1">آپارات</label>
             <input
               type="text"
-              value={companyForm.socialLinks?.whatsapp || ''}
+              value={companyForm.socialLinks?.aparat || ''}
               onChange={(e) => setCompanyForm({ 
                 ...companyForm, 
-                socialLinks: { ...companyForm.socialLinks, whatsapp: e.target.value } 
+                socialLinks: { ...companyForm.socialLinks, aparat: e.target.value } 
               })}
               className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white font-mono focus:border-amber-400"
-              placeholder="https://wa.me/..."
+              placeholder="https://aparat.com/..."
+              dir="ltr"
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-bold text-slate-300 mb-1">یوتیوب</label>
+            <input
+              type="text"
+              value={companyForm.socialLinks?.youtube || ''}
+              onChange={(e) => setCompanyForm({ 
+                ...companyForm, 
+                socialLinks: { ...companyForm.socialLinks, youtube: e.target.value } 
+              })}
+              className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white font-mono focus:border-amber-400"
+              placeholder="https://youtube.com/..."
               dir="ltr"
             />
           </div>
@@ -223,34 +237,6 @@ export const CompanyCmsTab: React.FC = () => {
               })}
               className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white font-mono focus:border-amber-400"
               placeholder="https://linkedin.com/..."
-              dir="ltr"
-            />
-          </div>
-          <div>
-            <label className="block text-xs font-bold text-slate-300 mb-1">بله</label>
-            <input
-              type="text"
-              value={companyForm.socialLinks?.bale || ''}
-              onChange={(e) => setCompanyForm({ 
-                ...companyForm, 
-                socialLinks: { ...companyForm.socialLinks, bale: e.target.value } 
-              })}
-              className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white font-mono focus:border-amber-400"
-              placeholder="https://ble.ir/..."
-              dir="ltr"
-            />
-          </div>
-          <div>
-            <label className="block text-xs font-bold text-slate-300 mb-1">ایتا</label>
-            <input
-              type="text"
-              value={companyForm.socialLinks?.eitaa || ''}
-              onChange={(e) => setCompanyForm({ 
-                ...companyForm, 
-                socialLinks: { ...companyForm.socialLinks, eitaa: e.target.value } 
-              })}
-              className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white font-mono focus:border-amber-400"
-              placeholder="https://eitaa.com/..."
               dir="ltr"
             />
           </div>

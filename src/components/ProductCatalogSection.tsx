@@ -95,10 +95,10 @@ export const ProductCatalogSection: React.FC<ProductCatalogSectionProps> = ({
               <span className="text-sm font-bold text-slate-800">تجهیزات و ماشین‌آلات</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight mb-6">
-              نمایشگاه <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-amber-500">محصولات</span>
+              فروشگاه <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-amber-500">محصولات</span>
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed">
-              بررسی و انتخاب پیشرفته‌ترین تجهیزات و ماشین‌آلات صنعت طیور با بالاترین استانداردهای مهندسی
+              تجهیزات تخصصی مرغداری، ماشین‌آلات خطوط تولید خوراک و محصولات موردنیاز صنعت دام، طیور و آبزیان
             </p>
           </motion.div>
         </div>
